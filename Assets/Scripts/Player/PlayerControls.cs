@@ -154,6 +154,54 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Fight"",
+            ""id"": ""6bf35a0a-30bf-462c-ad35-e0023f2f34be"",
+            ""actions"": [
+                {
+                    ""name"": ""RightPunch"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2efce40-5237-460a-b067-c7f8db9f97d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftPunch"",
+                    ""type"": ""Button"",
+                    ""id"": ""4669571b-1c79-471f-9faf-bc16d2e1dae7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""51c587bb-59da-4192-b088-44d043775785"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightPunch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b292686-66d9-425c-956c-be16df2065ae"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftPunch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -164,6 +212,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_GroundMovement_Jump = m_GroundMovement.FindAction("Jump", throwIfNotFound: true);
         m_GroundMovement_MouseX = m_GroundMovement.FindAction("MouseX", throwIfNotFound: true);
         m_GroundMovement_MouseY = m_GroundMovement.FindAction("MouseY", throwIfNotFound: true);
+        // Fight
+        m_Fight = asset.FindActionMap("Fight", throwIfNotFound: true);
+        m_Fight_RightPunch = m_Fight.FindAction("RightPunch", throwIfNotFound: true);
+        m_Fight_LeftPunch = m_Fight.FindAction("LeftPunch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -291,11 +343,70 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public GroundMovementActions @GroundMovement => new GroundMovementActions(this);
+
+    // Fight
+    private readonly InputActionMap m_Fight;
+    private List<IFightActions> m_FightActionsCallbackInterfaces = new List<IFightActions>();
+    private readonly InputAction m_Fight_RightPunch;
+    private readonly InputAction m_Fight_LeftPunch;
+    public struct FightActions
+    {
+        private @PlayerControls m_Wrapper;
+        public FightActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RightPunch => m_Wrapper.m_Fight_RightPunch;
+        public InputAction @LeftPunch => m_Wrapper.m_Fight_LeftPunch;
+        public InputActionMap Get() { return m_Wrapper.m_Fight; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FightActions set) { return set.Get(); }
+        public void AddCallbacks(IFightActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FightActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FightActionsCallbackInterfaces.Add(instance);
+            @RightPunch.started += instance.OnRightPunch;
+            @RightPunch.performed += instance.OnRightPunch;
+            @RightPunch.canceled += instance.OnRightPunch;
+            @LeftPunch.started += instance.OnLeftPunch;
+            @LeftPunch.performed += instance.OnLeftPunch;
+            @LeftPunch.canceled += instance.OnLeftPunch;
+        }
+
+        private void UnregisterCallbacks(IFightActions instance)
+        {
+            @RightPunch.started -= instance.OnRightPunch;
+            @RightPunch.performed -= instance.OnRightPunch;
+            @RightPunch.canceled -= instance.OnRightPunch;
+            @LeftPunch.started -= instance.OnLeftPunch;
+            @LeftPunch.performed -= instance.OnLeftPunch;
+            @LeftPunch.canceled -= instance.OnLeftPunch;
+        }
+
+        public void RemoveCallbacks(IFightActions instance)
+        {
+            if (m_Wrapper.m_FightActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFightActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FightActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FightActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FightActions @Fight => new FightActions(this);
     public interface IGroundMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMouseX(InputAction.CallbackContext context);
         void OnMouseY(InputAction.CallbackContext context);
+    }
+    public interface IFightActions
+    {
+        void OnRightPunch(InputAction.CallbackContext context);
+        void OnLeftPunch(InputAction.CallbackContext context);
     }
 }
