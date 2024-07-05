@@ -7,8 +7,10 @@ public class FightControls : MonoBehaviour
     //Booleans to trigger if a punch is thrown
     bool lPunch;
     bool rPunch;
-    float punchTimer = 0f;
+    float lPunchTimer = 0f;
+    float rPunchTimer = 0f;
     [SerializeField] float punchIFrames;
+    [SerializeField] float punchLength;
 
     //Arm objects
     [SerializeField] GameObject leftArmObj;
@@ -20,15 +22,15 @@ public class FightControls : MonoBehaviour
         if (lPunch)
         {
             Debug.Log("Left paunch");
-            ChangeArm(rightArmObj, new Vector3(10f, 10f, 10f));
-            punchTimer = punchIFrames;
+            ChangeArm(leftArmObj, new Vector3(10f, 10f, 10f));
+            lPunchTimer = punchIFrames;
         }
         else
         {
-            punchTimer -= Time.deltaTime;
-            if (punchTimer < 0f)
+            lPunchTimer -= Time.deltaTime;
+            if (lPunchTimer < 0f)
             {
-                ChangeArm(rightArmObj, Vector3.one);
+                ChangeArm(leftArmObj, Vector3.one);
             }
         }
 
@@ -36,15 +38,16 @@ public class FightControls : MonoBehaviour
         if (rPunch)
         {
             Debug.Log("Right paunch");
-            ChangeArm(leftArmObj, new Vector3(10f, 10f, 10f));
-            punchTimer = 0.5f;
+            ChangeArm(rightArmObj, new Vector3(10f, 10f, 10f));
+            lPunchTimer = 0.5f;
         }
         else
         {
-            punchTimer -= Time.deltaTime;
-            if (punchTimer < 0f)
+            lPunchTimer -= Time.deltaTime;
+            if (lPunchTimer < 0f)
             {
-                ChangeArm(leftArmObj, Vector3.one);
+                ChangeArm(rightArmObj, Vector3.one);
+                
             }
         }
     }
@@ -53,6 +56,12 @@ public class FightControls : MonoBehaviour
     private void ChangeArm(GameObject arm, Vector3 scale)
     {
         arm.transform.localScale = scale;
+    }
+
+    //Punch script/animation
+    private void StartPunch(GameObject arm)
+    {
+
     }
 
     public void RecieveInputL(bool punch)
