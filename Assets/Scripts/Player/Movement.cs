@@ -20,6 +20,9 @@ public class Movement : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
 
+    //Interact button
+    bool interactBool = false;
+
     private void Update()
     {
         //Horizontal Velocity
@@ -56,5 +59,10 @@ public class Movement : MonoBehaviour
     public void OnJumpPressed()
     {
         jumped = true;
+    }
+
+    public void OnInteractPressed()
+    {
+        interactBool = true;
     }
 }

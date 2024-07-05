@@ -39,12 +39,12 @@ public class FightControls : MonoBehaviour
         {
             Debug.Log("Right paunch");
             ChangeArm(rightArmObj, new Vector3(10f, 10f, 10f));
-            lPunchTimer = 0.5f;
+            rPunchTimer = 0.5f;
         }
         else
         {
-            lPunchTimer -= Time.deltaTime;
-            if (lPunchTimer < 0f)
+            rPunchTimer -= Time.deltaTime;
+            if (rPunchTimer < 0f)
             {
                 ChangeArm(rightArmObj, Vector3.one);
                 
