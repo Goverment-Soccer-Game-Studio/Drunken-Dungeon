@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class FightControls : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class FightControls : MonoBehaviour
     //Arm objects
     [SerializeField] GameObject leftArmObj;
     [SerializeField] GameObject rightArmObj;
+
+    //Animation
+    //[Header("Animation")]
+    //Using animations to get the arms to move forwards
 
     private void Update()
     {
