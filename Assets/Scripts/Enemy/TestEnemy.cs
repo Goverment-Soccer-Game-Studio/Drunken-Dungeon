@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEnemy : MonoBehaviour
+public class TestEnemy : MonoBehaviour, IEnemy
 {
-    [SerializeField] float enemyHP;
+    public new string name { get; set; }
+    public float health { get; set; }
+
+    [SerializeField]
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 100f;
     }
 
     // Update is called once per frame
@@ -22,5 +25,16 @@ public class TestEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
+        health -= 10f;
+    }
+
+    public void OnDamage(float damage)
+    {
+        Debug.Log("Dummy: ouch!");
+    }
+
+    public void OnDeath(float damage)
+    {
+        
     }
 }

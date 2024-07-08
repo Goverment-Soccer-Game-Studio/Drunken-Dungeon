@@ -7,5 +7,8 @@ public interface IEnemy
 {
     public string name { get; set; }
     public float health { get; set; }
+
+    public void OnDamage(float damage);
+    public void OnDeath(float damage);
     
 }
