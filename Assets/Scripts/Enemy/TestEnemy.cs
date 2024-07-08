@@ -18,11 +18,9 @@ public class TestEnemy : MonoBehaviour
         
     }
 
+    //The player's fists are triggers, so the OnTriggerEnter function will handle when the enemy is hit.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy Damageable")
-        {
-            Debug.Log("Ouch");
-        }
+        Debug.Log(other.gameObject.name);
     }
 }

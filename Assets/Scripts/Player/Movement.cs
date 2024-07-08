@@ -23,6 +23,12 @@ public class Movement : MonoBehaviour
     //Interact button
     bool interactBool = false;
 
+    //Hide and lock the cursor to the center of the screen.
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
         //Horizontal Velocity
