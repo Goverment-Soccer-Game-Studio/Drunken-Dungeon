@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] float turnSpeed;
+    [SerializeField] float moveSpeed;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -18,12 +19,18 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         LocatePlayer();
+        MoveTowardsPlayer();
     }
 
     void LocatePlayer()
     {
         Quaternion _lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
-        //Quaternion _lookRotation = Quaternion.LookRotation((rb.transform.position - player.transform.position).normalized);
         rb.transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * turnSpeed);
+    }
+
+    void MoveTowardsPlayer()
+    {
+        Vector3 _direction = ((player.transform.position - transform.position).normalized);
+        transform.position += (_direction * (Time.deltaTime * moveSpeed));
     }
 }
