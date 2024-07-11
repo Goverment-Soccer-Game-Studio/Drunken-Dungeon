@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class EnemyUI : MonoBehaviour
 {
     [SerializeField] Image healthBar;
-    private IEnemy enemy;
+    [SerializeField] private IEnemy enemy;
 
-    private void Awake()
+    private void Start()
     {
         enemy = gameObject.GetComponent<IEnemy>();
+        Instantiate(healthBar);
     }
 
     private void Update()
