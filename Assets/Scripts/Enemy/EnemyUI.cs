@@ -6,16 +6,26 @@ using UnityEngine.UI;
 public class EnemyUI : MonoBehaviour
 {
     [SerializeField] Image healthBar;
-    [SerializeField] private IEnemy enemy;
+    [SerializeField] Image healthBarBg;
+    private IEnemy enemy;
+    Camera mainCam;
 
-    private void Start()
+    private void Awake()
     {
         enemy = gameObject.GetComponent<IEnemy>();
-        Instantiate(healthBar);
+        mainCam = Camera.main;
     }
 
     private void Update()
     {
         healthBar.fillAmount = enemy.health / 100f;
+        BillboardHP(healthBar);
+        BillboardHP(healthBarBg);
+    }
+
+    private void BillboardHP(Image img)
+    {
+        img.gameObject.transform.LookAt(mainCam.transform.position);
+        img.gameObject.transform.Rotate(0, 180, 0);
     }
 }

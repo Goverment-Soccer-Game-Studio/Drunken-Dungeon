@@ -30,6 +30,7 @@ public class Interactor : MonoBehaviour
 
                 }
 
+                //Change for the new input manager
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     Debug.Log("Interact Pressed");

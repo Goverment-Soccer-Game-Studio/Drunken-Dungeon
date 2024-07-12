@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractTestBlock : MonoBehaviour
+public class InteractTestBlock : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string prompt;
+    public string interactionPrompt => prompt;
 
-    // Update is called once per frame
-    void Update()
+    public bool Interact(Interactor interactor)
     {
-        
+        Debug.Log("You have interacted with cube johnson");
+        return true;
     }
 }

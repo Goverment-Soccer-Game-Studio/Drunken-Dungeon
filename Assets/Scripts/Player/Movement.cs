@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] PlayerData playerData;
     //Player Controls and Speed
     [Header("Controls")]
     [SerializeField] CharacterController controller;
-    [SerializeField] float playerSpeed = 3f;
+    //[SerializeField] float playerSpeed = 3f;
     Vector2 wasdInput;
 
     //Player Gravity and Jumping
     [Header("Gravity/Jumping")]
-    [SerializeField] float jumpHeight = 3f;
+    //[SerializeField] float jumpHeight = 3f;
     bool jumped = false;
     [SerializeField] float gravity = -9.81f;
     //Vertical Velocity
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         //Horizontal Velocity
-        Vector3 hVelocity = (transform.right * wasdInput.x + transform.forward * wasdInput.y) * playerSpeed;
+        Vector3 hVelocity = (transform.right * wasdInput.x + transform.forward * wasdInput.y) * playerData.speed;
         controller.Move(hVelocity * Time.deltaTime);
 
         //Checks if the Physics sphere is collided with the ground and returns a variable
@@ -48,7 +49,7 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded)
             {
-                vVelocity.y = Mathf.Sqrt(-2 * jumpHeight * gravity);
+                vVelocity.y = Mathf.Sqrt(-2 * playerData.jumpHeight * gravity);
             }
             jumped = false;
         }
