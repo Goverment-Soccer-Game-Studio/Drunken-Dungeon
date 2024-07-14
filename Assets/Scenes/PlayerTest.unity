@@ -559,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 454245409}
   playerDrinkHolder: {fileID: 53042133}
+  playerData: {fileID: 11400000, guid: 0763a4bd7e7da004cbaca063ede19597, type: 2}
 --- !u!136 &673794729
 CapsuleCollider:
   m_ObjectHideFlags: 0
