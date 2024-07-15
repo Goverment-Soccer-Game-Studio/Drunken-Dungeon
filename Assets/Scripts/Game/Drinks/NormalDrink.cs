@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
+//This code will be duplicated for each drink script, doing different things
 public class NormalDrink : MonoBehaviour, IInteractable, IDrink
 {
     //Input for player animator, object, and data
