@@ -23,8 +23,7 @@ public class FightControls : MonoBehaviour
         //Left punch
         if (lPunch && lPunchTimer <= 0)
         {
-            Debug.Log("Left paunch");
-            //ChangeArm(leftArmObj, new Vector3(10f, 10f, 10f));
+            //Debug.Log("Left paunch");
             animator.SetTrigger("LeftPunch");
             lPunchTimer = punchCooldown;
         }
@@ -36,7 +35,7 @@ public class FightControls : MonoBehaviour
         //Right punch
         if (rPunch && rPunchTimer <= 0)
         {
-            Debug.Log("Right paunch");
+            //Debug.Log("Right paunch");
             animator.SetTrigger("RightPunch");
             rPunchTimer = punchCooldown;
         }
