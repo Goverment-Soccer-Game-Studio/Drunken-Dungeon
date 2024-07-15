@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 3350606}
   - component: {fileID: 2334202}
   - component: {fileID: 9587718}
-  m_Layer: 0
+  - component: {fileID: 6566330878704380777}
+  - component: {fileID: 7950934509829739125}
+  m_Layer: 6
   m_Name: Bottle4_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102526}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6665033, y: 0.23616391, z: 0.23616385, w: 0.6665033}
+  m_LocalRotation: {x: -0.6665033, y: 0.23616387, z: 0.23616387, w: 0.6665033}
   m_LocalPosition: {x: 184.11, y: -0.06, z: 230.76}
   m_LocalScale: {x: 0.9309061, y: 0.9309061, z: 0.9309061}
   m_ConstrainProportionsScale: 0
@@ -105,3 +107,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6566330878704380777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb931ab378e620e44aba2694e3c208e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
+  playerDrinkHolder: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 0763a4bd7e7da004cbaca063ede19597, type: 2}
+--- !u!136 &7950934509829739125
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102526}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.456036
+  m_Height: 0.20785673
+  m_Direction: 1
+  m_Center: {x: 0.000000025132119, y: 0.00000001656433, z: 0.456036}
