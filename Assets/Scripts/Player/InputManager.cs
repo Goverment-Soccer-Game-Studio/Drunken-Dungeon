@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -8,16 +9,21 @@ public class InputManager : MonoBehaviour
     [SerializeField] Movement movement;
     [SerializeField] MouseCamera mouseCamera;
     [SerializeField] FightControls fightControls;
+    [SerializeField] Interactor interactor;
 
     //Player Controls
     PlayerControls playerControls;
     PlayerControls.GroundMovementActions groundMovementActions;
     PlayerControls.FightActions fightActions;
 
+    //Bool to see if the player can move or use their camera
+    bool canMove = true;
+
     Vector2 wasdInput;
     Vector2 mouseInput;
     bool lPunch;
     bool rPunch;
+    bool interact;
 
     private void Awake()
     {
@@ -35,15 +41,24 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        movement.RecieveInput(wasdInput);
-        mouseCamera.RecieveInput(mouseInput);
+        if (canMove)
+        {
+            movement.RecieveInput(wasdInput);
+            mouseCamera.RecieveInput(mouseInput);
 
-        lPunch = fightActions.LeftPunch.triggered;
-        rPunch = fightActions.RightPunch.triggered;
-        fightControls.RecieveInputL(lPunch);
-        fightControls.RecieveInputR(rPunch);
+            //lPunch = fightActions.LeftPunch.triggered;
+            //rPunch = fightActions.RightPunch.triggered;
+            fightControls.RecieveInputL(fightActions.LeftPunch.triggered);
+            fightControls.RecieveInputR(fightActions.RightPunch.triggered);
+            interactor.InteractRecieveInput(playerControls.Interact.Interact.triggered);
+        }
     }
 
+
+    public void EnablePlayerInput(bool b)
+    {
+        canMove = b;
+    }
     private void OnEnable()
     {
         playerControls.Enable();
