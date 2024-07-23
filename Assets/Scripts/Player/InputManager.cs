@@ -18,6 +18,10 @@ public class InputManager : MonoBehaviour
 
     //Bool to see if the player can move or use their camera
     bool canMove = true;
+    bool gamePaused = false;
+    bool inInteraction = false;
+    Camera playerCam;
+    Camera interactionCam;
 
     Vector2 wasdInput;
     Vector2 mouseInput;
@@ -46,19 +50,71 @@ public class InputManager : MonoBehaviour
             movement.RecieveInput(wasdInput);
             mouseCamera.RecieveInput(mouseInput);
 
-            //lPunch = fightActions.LeftPunch.triggered;
-            //rPunch = fightActions.RightPunch.triggered;
             fightControls.RecieveInputL(fightActions.LeftPunch.triggered);
             fightControls.RecieveInputR(fightActions.RightPunch.triggered);
             interactor.InteractRecieveInput(playerControls.Interact.Interact.triggered);
         }
+
+        //Pause & Interaction controls
+        if (playerControls.Escape.Escape.triggered)
+        {
+            //If the game isnt paused but in an interaction, the player can press escape to leave the interaction
+            if (!gamePaused)
+            {
+                if (inInteraction)
+                {
+                    canMove = true;
+                    EndInteraction();
+                    inInteraction = false;
+                }
+                //If the player isnt in an interaction and escape is pressed, it will pause the game.
+                else
+                {
+                    gamePaused = true;
+                    canMove = false;
+                    Time.timeScale = 0f;
+                }
+            }
+            //If the game is paused and the player presses escape, unpause the game.
+            else
+            {
+                canMove = true;
+                gamePaused = false;
+                Time.timeScale = 1f;
+            }
+        }
     }
 
-
+    //Player input to use by other scripts.
     public void EnablePlayerInput(bool b)
     {
         canMove = b;
     }
+
+    //If an interaction is started, set the bool to true so that it can disable the controls.
+    public void StartInteraction(bool b)
+    {
+        inInteraction = b;
+    }
+    //If an interaction has a camera, you can disable the players camera and enable the interaction camera.
+    public void StartInteraction(bool b, Camera pInteractionCam, Camera playerCamera)
+    {
+        inInteraction = b;
+        playerCamera.enabled = !b;
+        playerCam = playerCamera;
+        pInteractionCam.enabled = b;
+        interactionCam = pInteractionCam;
+    }
+
+    //Disable the interaction camera, enables the player camera and sets it up for the next ineraction
+    private void EndInteraction()
+    {
+        interactionCam.enabled = false;
+        playerCam.enabled = true;
+        interactionCam = null;
+        playerCam = null;
+    }
+
     private void OnEnable()
     {
         playerControls.Enable();

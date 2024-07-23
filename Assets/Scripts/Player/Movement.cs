@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     [SerializeField] CharacterController controller;
     //[SerializeField] float playerSpeed = 3f;
     Vector2 wasdInput;
-    bool canMove;
 
     //Player Gravity and Jumping
     [Header("Gravity/Jumping")]
