@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
+=======
+    path: Assets/Scenes/RoomStart.unity
+    guid: 62c00e71a82f113459a99a7cbccd9e62
+  - enabled: 1
+>>>>>>> origin/lorenzo-levels
     path: Assets/Scenes/Room1-1.unity
     guid: 72e393a0ee48e574ba7ae24f029d41bf
   - enabled: 1
