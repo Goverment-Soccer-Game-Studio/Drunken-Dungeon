@@ -5,9 +5,13 @@ using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
+    //Center of the interaction sphere
     [SerializeField] private Transform interactPoint;
+    //Radius of the interaction sphere
     [SerializeField] private float interactRadius = 0.5f;
+    //The layer that the objects have to be on to be registered for the interaction sphere
     [SerializeField] private LayerMask interactMask;
+    //The UI that is enabled or disabled if they are in range of the item.
     [SerializeField] private InteractionUI interactionUI;
 
     //Max things you can be collided with.
@@ -15,6 +19,9 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int numFound;
 
     private IInteractable interactable;
+
+    //Input bool for if the interact button was pressed
+    bool interactPressed;
 
     private void Update()
     {
@@ -30,12 +37,13 @@ public class Interactor : MonoBehaviour
 
                 }
 
-                //Change for the new input manager
-                if (Input.GetKeyDown(KeyCode.F))
+                //Using the input manager changes the interactPressed Bool
+                if (interactPressed)
                 {
                     Debug.Log("Interact Pressed");
                     interactable.Interact(this);
                 }
+                interactPressed = false;
             }
         }
         else
@@ -50,6 +58,11 @@ public class Interactor : MonoBehaviour
                 interactionUI.Close();
             }
         }
+    }
+
+    public void InteractRecieveInput(bool input)
+    {
+        interactPressed = input;
     }
 
     private void OnDrawGizmos()
