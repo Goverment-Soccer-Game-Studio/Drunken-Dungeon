@@ -264,38 +264,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1534738665601893969, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.37
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 1534738665601893969, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.76
+      value: 2.97
       objectReference: {fileID: 0}
     - target: {fileID: 2337229975829954562, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 2337229975829954562, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.83
+      value: 5.47
       objectReference: {fileID: 0}
     - target: {fileID: 6214591300512625269, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.33
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6439432600743161625, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
       propertyPath: m_Name
       value: RoomType3
       objectReference: {fileID: 0}
-    - target: {fileID: 7179519649618615021, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179519649618615021, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.31
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5071978997261940248, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
+    - {fileID: 5821544150435568524, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0ad7978c18b68458010b1fa4032849, type: 3}
