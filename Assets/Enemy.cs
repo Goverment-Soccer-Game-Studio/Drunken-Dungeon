@@ -24,13 +24,16 @@ public class Enemy : MonoBehaviour
 
     void LocatePlayer()
     {
-        Quaternion _lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+        direction.y = 0; // Keep the enemy upright
+        Quaternion _lookRotation = Quaternion.LookRotation(direction);
         rb.transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * turnSpeed);
     }
 
     void MoveTowardsPlayer()
     {
-        Vector3 _direction = ((player.transform.position - transform.position).normalized);
+        Vector3 _direction = (player.transform.position - transform.position).normalized;
+        _direction.y = 0; // Keep the enemy moving horizontally
         transform.position += (_direction * (Time.deltaTime * moveSpeed));
     }
 }
