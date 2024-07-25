@@ -15,7 +15,7 @@ public class DoorTeleport : MonoBehaviour
         }
     }
 
-    public void LoadRandomScene()
+    private void LoadRandomScene()
     {
         if (sceneNames.Length == 0)
         {

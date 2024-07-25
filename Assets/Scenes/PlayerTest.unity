@@ -1494,18 +1494,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 729318449045439518, guid: 7b1a2b63b15c5904580e1db050bb49c7, type: 3}
-      propertyPath: m_Name
-      value: TestDrink
-      objectReference: {fileID: 0}
-    - target: {fileID: 4034056021583978197, guid: 7b1a2b63b15c5904580e1db050bb49c7, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 454245409}
-    - target: {fileID: 4034056021583978197, guid: 7b1a2b63b15c5904580e1db050bb49c7, type: 3}
-      propertyPath: playerDrinkHolder
-      value: 
-      objectReference: {fileID: 53042133}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
