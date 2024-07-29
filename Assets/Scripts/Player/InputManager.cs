@@ -10,20 +10,23 @@ public class InputManager : MonoBehaviour
     [SerializeField] MouseCamera mouseCamera;
     [SerializeField] FightControls fightControls;
     [SerializeField] Interactor interactor;
+    [SerializeField] BarControls barControls;
 
     //Player Controls
     PlayerControls playerControls;
     PlayerControls.GroundMovementActions groundMovementActions;
     PlayerControls.FightActions fightActions;
+    PlayerControls.BarControlsActions barActions;
 
     //Bool to see if the player can move or use their camera
     bool canMove = true;
-    bool gamePaused = false;
+    public bool gamePaused = false;
     bool inInteraction = false;
     Camera playerCam;
     Camera interactionCam;
 
     Vector2 wasdInput;
+    Vector2 barInput;
     Vector2 mouseInput;
     bool lPunch;
     bool rPunch;
@@ -34,8 +37,10 @@ public class InputManager : MonoBehaviour
         playerControls = new PlayerControls();
         groundMovementActions = playerControls.GroundMovement;
         fightActions = playerControls.Fight;
+        barActions = playerControls.BarControls;
 
         groundMovementActions.Movement.performed += ctx => wasdInput = ctx.ReadValue<Vector2>();
+        //barActions.Selectioner.performed += ctx => barInput = ctx.ReadValue<Vector2>();
 
         groundMovementActions.Jump.performed += _ => movement.OnJumpPressed();
 
@@ -55,6 +60,12 @@ public class InputManager : MonoBehaviour
             interactor.InteractRecieveInput(playerControls.Interact.Interact.triggered);
         }
 
+        //If the bar control script is enabled, switch to these controls.
+        if (barControls.isActiveAndEnabled && !movement.isActiveAndEnabled)
+        {
+            //barControls.RecieveInput(barInput);
+        }
+
         //Pause & Interaction controls
         if (playerControls.Escape.Escape.triggered)
         {
@@ -70,19 +81,31 @@ public class InputManager : MonoBehaviour
                 //If the player isnt in an interaction and escape is pressed, it will pause the game.
                 else
                 {
-                    gamePaused = true;
-                    canMove = false;
-                    Time.timeScale = 0f;
+                    PauseGame();
                 }
             }
             //If the game is paused and the player presses escape, unpause the game.
             else
             {
-                canMove = true;
-                gamePaused = false;
-                Time.timeScale = 1f;
+                ResumeGame();
             }
         }
+    }
+
+    public void PauseGame()
+    {
+        gamePaused = true;
+        canMove = false;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void ResumeGame()
+    {
+        canMove = true;
+        gamePaused = false;
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Player input to use by other scripts.
@@ -95,6 +118,7 @@ public class InputManager : MonoBehaviour
     public void StartInteraction(bool b)
     {
         inInteraction = b;
+        movement.enabled = !b;
     }
     //If an interaction has a camera, you can disable the players camera and enable the interaction camera.
     public void StartInteraction(bool b, Camera pInteractionCam, Camera playerCamera)
@@ -104,6 +128,18 @@ public class InputManager : MonoBehaviour
         playerCam = playerCamera;
         pInteractionCam.enabled = b;
         interactionCam = pInteractionCam;
+        movement.enabled = !b;
+    }
+
+    public void StartBarInteraction(bool b, Camera pInteractionCam, Camera playerCamera)
+    {
+        inInteraction = b;
+        playerCamera.enabled = !b;
+        playerCam = playerCamera;
+        pInteractionCam.enabled = b;
+        interactionCam = pInteractionCam;
+        movement.enabled = !b;
+        barControls.enabled = b;
     }
 
     //Disable the interaction camera, enables the player camera and sets it up for the next ineraction
@@ -113,6 +149,7 @@ public class InputManager : MonoBehaviour
         playerCam.enabled = true;
         interactionCam = null;
         playerCam = null;
+        movement.enabled = true;
     }
 
     private void OnEnable()

@@ -21,7 +21,7 @@ public class BarScript : MonoBehaviour, IInteractable
     {
         //Disable the player controls and turn off the player camera
         inputManager.EnablePlayerInput(false);
-        inputManager.StartInteraction(true, barCamera, playerCamera);
+        inputManager.StartBarInteraction(true, barCamera, playerCamera);
         barAnimator.SetTrigger("BarInteract");
         return true;
     }

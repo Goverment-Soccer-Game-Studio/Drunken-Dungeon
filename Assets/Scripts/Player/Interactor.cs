@@ -12,7 +12,7 @@ public class Interactor : MonoBehaviour
     //The layer that the objects have to be on to be registered for the interaction sphere
     [SerializeField] private LayerMask interactMask;
     //The UI that is enabled or disabled if they are in range of the item.
-    [SerializeField] private InteractionUI interactionUI;
+    [SerializeField] private PlayerUI playerUI;
 
     //Max things you can be collided with.
     private readonly Collider[] aColliders = new Collider[3];
@@ -31,9 +31,9 @@ public class Interactor : MonoBehaviour
             interactable = aColliders[0].GetComponent<IInteractable>();
             if (interactable != null)
             {
-                if (!interactionUI.isDisplayed)
+                if (!playerUI.isDisplayed)
                 {
-                    interactionUI.Setup(interactable.interactionPrompt);
+                    playerUI.Setup(interactable.interactionPrompt);
 
                 }
 
@@ -53,9 +53,9 @@ public class Interactor : MonoBehaviour
                 interactable = null;
             }
 
-            if (interactionUI.isDisplayed)
+            if (playerUI.isDisplayed)
             {
-                interactionUI.Close();
+                playerUI.Close();
             }
         }
     }
