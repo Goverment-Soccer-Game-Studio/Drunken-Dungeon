@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 4955152837393180310}
   - component: {fileID: 2699262495876792266}
   - component: {fileID: 436696663440271515}
+  - component: {fileID: 9047003503989957441}
   - component: {fileID: 487340361625065493}
   m_Layer: 0
   m_Name: Player
@@ -336,6 +337,9 @@ MonoBehaviour:
   movement: {fileID: 4955152837393180310}
   mouseCamera: {fileID: 3468954155417199041}
   fightControls: {fileID: 2699262495876792266}
+  interactor: {fileID: 436696663440271515}
+  barControls: {fileID: 9047003503989957441}
+  gamePaused: 0
 --- !u!114 &3468954155417199041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,8 +405,27 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 64
-  interactionUI: {fileID: 0}
+  playerUI: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
   numFound: 0
+--- !u!114 &9047003503989957441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846736922295855998}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5410a700ec06dc4989546a3f5a59453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  barCamera: {fileID: 0}
 --- !u!95 &487340361625065493
 Animator:
   serializedVersion: 5

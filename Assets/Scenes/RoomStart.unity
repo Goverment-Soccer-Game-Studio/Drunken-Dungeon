@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1097007879}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -228,9 +232,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 436696663440271515, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 1247990638}
+    - target: {fileID: 436696663440271515, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: interactionUI
       value: 
       objectReference: {fileID: 1247990638}
+    - target: {fileID: 3843781816896345347, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 1097007875}
     - target: {fileID: 6259546293790272057, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.6
@@ -484,6 +496,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1097007875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 436696663440271515, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+  m_PrefabInstance: {fileID: 168967852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e974ef26a88ba428b4acbb538e481b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1097007879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3843781816896345347, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+  m_PrefabInstance: {fileID: 168967852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6126d0c9b27fc754e887e5b069cfeeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1247990638 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
@@ -732,6 +766,22 @@ PrefabInstance:
     - target: {fileID: 6439432600743161625, guid: f0202cc509638304c92f79e98b230c3f, type: 3}
       propertyPath: m_Name
       value: RoomType1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746557031803070474, guid: f0202cc509638304c92f79e98b230c3f, type: 3}
+      propertyPath: sceneNames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746557031803070474, guid: f0202cc509638304c92f79e98b230c3f, type: 3}
+      propertyPath: sceneNames.Array.data[0]
+      value: Room1-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746557031803070474, guid: f0202cc509638304c92f79e98b230c3f, type: 3}
+      propertyPath: sceneNames.Array.data[1]
+      value: Room1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746557031803070474, guid: f0202cc509638304c92f79e98b230c3f, type: 3}
+      propertyPath: sceneNames.Array.data[2]
+      value: Room1-3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

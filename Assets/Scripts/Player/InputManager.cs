@@ -58,11 +58,14 @@ public class InputManager : MonoBehaviour
             interactor.InteractRecieveInput(playerControls.Interact.Interact.triggered);
         }
 
-        if (barControls.isActiveAndEnabled && !movement.isActiveAndEnabled)
+        if (barControls != null)
         {
-            barControls.RecieveInputL(barActions.SelectionLeft.triggered);
-            barControls.RecieveInputR(barActions.SelectionRight.triggered);
-            barControls.RecieveInputConfirm(barActions.Confirm.triggered);
+            if (barControls.isActiveAndEnabled && !movement.isActiveAndEnabled)
+            {
+                barControls.RecieveInputL(barActions.SelectionLeft.triggered);
+                barControls.RecieveInputR(barActions.SelectionRight.triggered);
+                barControls.RecieveInputConfirm(barActions.Confirm.triggered);
+            }
         }
 
         //Pause & Interaction controls

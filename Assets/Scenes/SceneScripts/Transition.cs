@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorTeleport : MonoBehaviour
+public class DoorTeleport : MonoBehaviour, IInteractable
 {
     [SerializeField] private string[] sceneNames; // List of scene names to choose from
+
+    public string interactionPrompt => "Enter Door";
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,5 +31,11 @@ public class DoorTeleport : MonoBehaviour
 
         // Load the chosen scene
         SceneManager.LoadScene(randomScene);
+    }
+
+    public bool Interact(Interactor interactor)
+    {
+        LoadRandomScene();
+        return true;
     }
 }
