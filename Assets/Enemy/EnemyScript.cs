@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] PlayerScript playerScript;
     [SerializeField] float turnSpeed;
     [SerializeField] float moveSpeed;
     Rigidbody rb;
@@ -13,13 +15,27 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Debug.Log("Testing...");
     }
 
     // Update is called once per frame
     void Update()
     {
+        IfInRange();
         LocatePlayer();
         MoveTowardsPlayer();
+        IfInRange();
+    }
+
+    void IfInRange()
+    {
+        Vector3 distance = rb.transform.position - player.transform.position;
+        Debug.Log(distance.ToString());
+        if (distance.x < 2 && distance.y < 2 && distance.z < 2)
+        {
+            playerScript.playerData.health -= 0.1f;
+            Debug.Log("Damaged Player For 5 Dmg. Player Health @ " + playerScript.playerData.health);
+        }
     }
 
     void LocatePlayer()

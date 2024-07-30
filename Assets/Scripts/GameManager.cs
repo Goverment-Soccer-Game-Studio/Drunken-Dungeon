@@ -6,4 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] PlayerScript PlayerScript;
+
+    void Update()
+    {
+        if (PlayerScript.playerData.health <= 0)
+        {
+            Debug.Log("Player Has Died!");
+            SceneManager.LoadScene("RoomStart");
+        }
+    }
 }
