@@ -5,7 +5,9 @@ using UnityEngine;
 public class BarControls : MonoBehaviour
 {
 
-    Vector2 drinkInput;
+    bool drinkInputR;
+    bool drinkInputL;
+    bool confirmBool;
     [Header("Drinks")]
     [SerializeField] GameObject[] drinks;
     private int selectedDrink = 0;
@@ -14,15 +16,36 @@ public class BarControls : MonoBehaviour
     private void Update()
     {
         barCamera.transform.LookAt(drinks[selectedDrink].transform.position);
-        if (drinkInput.x > 0)
+        if (drinkInputR && selectedDrink != (drinks.Length - 1))
         {
             Debug.Log("Right Drink");
             selectedDrink++;
+            drinkInputR = false;
+        }
+        if (drinkInputL && selectedDrink != 0)
+        {
+            Debug.Log("Left Drink");
+            selectedDrink--;
+            drinkInputL = false;
+        }
+        if (confirmBool)
+        {
+            Debug.Log("Drink Selected");
         }
     }
 
-    public void RecieveInput(Vector2 dInput)
+    public void RecieveInputR(bool dInput)
     {
-        drinkInput = dInput;
+        drinkInputR = dInput;
+    }
+
+    public void RecieveInputL(bool dInput)
+    {
+        drinkInputL = dInput;
+    }
+
+    public void RecieveInputConfirm(bool dInput)
+    {
+        confirmBool = dInput;
     }
 }

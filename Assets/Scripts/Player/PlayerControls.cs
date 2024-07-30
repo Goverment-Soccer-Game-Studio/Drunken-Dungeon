@@ -264,10 +264,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""ff75a412-7599-4ca4-b6f5-7ae27804147b"",
             ""actions"": [
                 {
-                    ""name"": ""Selectioner"",
-                    ""type"": ""PassThrough"",
+                    ""name"": ""SelectionLeft"",
+                    ""type"": ""Button"",
                     ""id"": ""e7d6e76b-fb59-411a-8bf0-7ac716def1b8"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectionRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""553ae9bd-089e-4603-9763-5967b0d5800a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""517e22bc-dcef-40d9-9a94-5ec01dffcee6"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -275,114 +293,59 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""AD"",
-                    ""id"": ""07a92dcf-5dc4-48e7-b824-9e2100744808"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""4acf453c-5515-47a4-9a80-181f31bee4f7"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""3affeb69-9804-43b0-9d48-364463c01f09"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""4e8ecc1b-f114-49b7-8257-086f321083a0"",
+                    ""name"": """",
+                    ""id"": ""d4309c5c-6899-4679-9d04-99eba55cd7cf"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Selectioner"",
+                    ""action"": ""SelectionLeft"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""eae8ece2-5dd2-4330-b45f-cbefc783ceb8"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""LeftRight"",
-                    ""id"": ""1b3bebdd-8deb-42eb-a734-f0da6bf3295a"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""c765e6b5-0ff9-4876-a18b-0cd93f542a6a"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""ee30e425-7e33-4625-af60-e6bb8e2da555"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Selectioner"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""ae89c997-3b96-406a-88af-ff4cfeae9708"",
+                    ""name"": """",
+                    ""id"": ""1b767989-ed21-493a-a5a4-0b089a43ffde"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Selectioner"",
+                    ""action"": ""SelectionLeft"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""72083d6e-fac3-407e-b095-aab9f3a6037a"",
+                    ""name"": """",
+                    ""id"": ""60ea4c12-86c0-4803-89de-d392858e2f87"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectionRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1470de70-fbec-43e9-b68c-12822515603d"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Selectioner"",
+                    ""action"": ""SelectionRight"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eee1ba89-9f60-402e-b21b-889491053288"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -407,7 +370,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Escape_Escape = m_Escape.FindAction("Escape", throwIfNotFound: true);
         // BarControls
         m_BarControls = asset.FindActionMap("BarControls", throwIfNotFound: true);
-        m_BarControls_Selectioner = m_BarControls.FindAction("Selectioner", throwIfNotFound: true);
+        m_BarControls_SelectionLeft = m_BarControls.FindAction("SelectionLeft", throwIfNotFound: true);
+        m_BarControls_SelectionRight = m_BarControls.FindAction("SelectionRight", throwIfNotFound: true);
+        m_BarControls_Confirm = m_BarControls.FindAction("Confirm", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -685,12 +650,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // BarControls
     private readonly InputActionMap m_BarControls;
     private List<IBarControlsActions> m_BarControlsActionsCallbackInterfaces = new List<IBarControlsActions>();
-    private readonly InputAction m_BarControls_Selectioner;
+    private readonly InputAction m_BarControls_SelectionLeft;
+    private readonly InputAction m_BarControls_SelectionRight;
+    private readonly InputAction m_BarControls_Confirm;
     public struct BarControlsActions
     {
         private @PlayerControls m_Wrapper;
         public BarControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Selectioner => m_Wrapper.m_BarControls_Selectioner;
+        public InputAction @SelectionLeft => m_Wrapper.m_BarControls_SelectionLeft;
+        public InputAction @SelectionRight => m_Wrapper.m_BarControls_SelectionRight;
+        public InputAction @Confirm => m_Wrapper.m_BarControls_Confirm;
         public InputActionMap Get() { return m_Wrapper.m_BarControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -700,16 +669,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_BarControlsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_BarControlsActionsCallbackInterfaces.Add(instance);
-            @Selectioner.started += instance.OnSelectioner;
-            @Selectioner.performed += instance.OnSelectioner;
-            @Selectioner.canceled += instance.OnSelectioner;
+            @SelectionLeft.started += instance.OnSelectionLeft;
+            @SelectionLeft.performed += instance.OnSelectionLeft;
+            @SelectionLeft.canceled += instance.OnSelectionLeft;
+            @SelectionRight.started += instance.OnSelectionRight;
+            @SelectionRight.performed += instance.OnSelectionRight;
+            @SelectionRight.canceled += instance.OnSelectionRight;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
         }
 
         private void UnregisterCallbacks(IBarControlsActions instance)
         {
-            @Selectioner.started -= instance.OnSelectioner;
-            @Selectioner.performed -= instance.OnSelectioner;
-            @Selectioner.canceled -= instance.OnSelectioner;
+            @SelectionLeft.started -= instance.OnSelectionLeft;
+            @SelectionLeft.performed -= instance.OnSelectionLeft;
+            @SelectionLeft.canceled -= instance.OnSelectionLeft;
+            @SelectionRight.started -= instance.OnSelectionRight;
+            @SelectionRight.performed -= instance.OnSelectionRight;
+            @SelectionRight.canceled -= instance.OnSelectionRight;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
         }
 
         public void RemoveCallbacks(IBarControlsActions instance)
@@ -749,6 +730,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     }
     public interface IBarControlsActions
     {
-        void OnSelectioner(InputAction.CallbackContext context);
+        void OnSelectionLeft(InputAction.CallbackContext context);
+        void OnSelectionRight(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
     }
 }

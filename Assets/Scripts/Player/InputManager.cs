@@ -26,7 +26,6 @@ public class InputManager : MonoBehaviour
     Camera interactionCam;
 
     Vector2 wasdInput;
-    Vector2 barInput;
     Vector2 mouseInput;
     bool lPunch;
     bool rPunch;
@@ -40,7 +39,6 @@ public class InputManager : MonoBehaviour
         barActions = playerControls.BarControls;
 
         groundMovementActions.Movement.performed += ctx => wasdInput = ctx.ReadValue<Vector2>();
-        //barActions.Selectioner.performed += ctx => barInput = ctx.ReadValue<Vector2>();
 
         groundMovementActions.Jump.performed += _ => movement.OnJumpPressed();
 
@@ -60,10 +58,11 @@ public class InputManager : MonoBehaviour
             interactor.InteractRecieveInput(playerControls.Interact.Interact.triggered);
         }
 
-        //If the bar control script is enabled, switch to these controls.
         if (barControls.isActiveAndEnabled && !movement.isActiveAndEnabled)
         {
-            //barControls.RecieveInput(barInput);
+            barControls.RecieveInputL(barActions.SelectionLeft.triggered);
+            barControls.RecieveInputR(barActions.SelectionRight.triggered);
+            barControls.RecieveInputConfirm(barActions.Confirm.triggered);
         }
 
         //Pause & Interaction controls
