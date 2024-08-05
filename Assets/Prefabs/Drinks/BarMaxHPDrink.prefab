@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6942559223726636670}
   - component: {fileID: 3217922469093729546}
   m_Layer: 6
-  m_Name: HealthTestDrink
+  m_Name: BarMaxHPDrink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6115026172033719137}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6665033, y: 0.23616391, z: 0.23616385, w: 0.6665033}
+  m_LocalRotation: {x: -0.6665033, y: 0.23616387, z: 0.23616387, w: 0.6665033}
   m_LocalPosition: {x: 5.5192833, y: -0.00000023841858, z: -3.7703862}
-  m_LocalScale: {x: 0.9309061, y: 0.9309061, z: 0.9309061}
+  m_LocalScale: {x: 0.4577827, y: 0.6039008, z: -2.6597319}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5286f28c2d3c38b4eb57818c37768e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthIncrease: 0
+  healthIncrease: 35
   playerAnimator: {fileID: 6942559223726636670}
   playerDrinkHolder: {fileID: 0}
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 0763a4bd7e7da004cbaca063ede19597, type: 2}
 --- !u!95 &6942559223726636670
 Animator:
   serializedVersion: 5

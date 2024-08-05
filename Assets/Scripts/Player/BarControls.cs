@@ -13,6 +13,7 @@ public class BarControls : MonoBehaviour
     [SerializeField] GameObject[] drinks;
     private int selectedDrink = 0;
     [SerializeField] Camera barCamera;
+    List<GameObject> finalDrink;
 
     private void Update()
     {
@@ -31,8 +32,9 @@ public class BarControls : MonoBehaviour
         }
         if (confirmBool)
         {
+            //Add UI controls stuff
             Debug.Log("Drink Selected");
-            drinks[selectedDrink].GetComponentInChildren<IDrink>().OnDrink();
+            finalDrink.Add(drinks[selectedDrink].gameObject);
         }
     }
 
