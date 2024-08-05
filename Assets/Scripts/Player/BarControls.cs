@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BarControls : MonoBehaviour
@@ -31,6 +32,7 @@ public class BarControls : MonoBehaviour
         if (confirmBool)
         {
             Debug.Log("Drink Selected");
+            drinks[selectedDrink].GetComponentInChildren<IDrink>().OnDrink();
         }
     }
 

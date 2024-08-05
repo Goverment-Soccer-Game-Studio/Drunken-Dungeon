@@ -6,6 +6,8 @@ using TMPro;
 
 public class PlayerUI : MonoBehaviour
 {
+
+    [SerializeField] PlayerData playerData;
     private Camera mainCam;
     [Header("Interaction")]
     [SerializeField] private GameObject uiPanel;
@@ -18,6 +20,10 @@ public class PlayerUI : MonoBehaviour
     [Header("Pause Menu")]
     [SerializeField] GameObject pauseGameObj;
 
+    [Header("Player UI")]
+    [SerializeField] Image healthBar;
+    [SerializeField] TMP_Text healthTxt;
+
 
     private void Start()
     {
@@ -29,6 +35,8 @@ public class PlayerUI : MonoBehaviour
     private void Update()
     {
         pauseGameObj.SetActive(inputManager.gamePaused);
+        healthBar.fillAmount = playerData.health / playerData.maxHealth;
+        healthTxt.text = playerData.health.ToString();
     }
 
     public void Setup(string promptText)
