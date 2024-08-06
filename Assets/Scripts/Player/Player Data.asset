@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532e1948959708c47959b3f678d527cb, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   health: 100
   maxHealth: 100
+=======
+  health: 50
+>>>>>>> staging
   speed: 3
   jumps: 1
   jumpHeight: 3
