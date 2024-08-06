@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player Has Died!");
             SceneManager.LoadScene("RoomStart");
+            PlayerScript.playerData.health = 50;
         }
     }
 }

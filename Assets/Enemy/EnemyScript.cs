@@ -7,9 +7,23 @@ public class EnemyScript : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] PlayerScript playerScript;
+
     [SerializeField] float turnSpeed;
-    [SerializeField] float moveSpeed;
+
+    [SerializeField] float distance;
+    [SerializeField] float attackDistance;
+
+    [SerializeField] float acceleration;
+    [SerializeField] float currentSpeed;
+    [SerializeField] float maxSpeed;
+
+    [SerializeField] Animator animator;
+
+    public float attackCooldown = 3.0f;
+    private float lastAttackTime = -Mathf.Infinity;
+
     Rigidbody rb;
+    float rootY;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +35,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IfInRange();
+        animator.SetFloat("Current Speed", currentSpeed);
         LocatePlayer();
         MoveTowardsPlayer();
         IfInRange();
@@ -30,11 +44,13 @@ public class EnemyScript : MonoBehaviour
     void IfInRange()
     {
         Vector3 distance = rb.transform.position - player.transform.position;
-        Debug.Log(distance.ToString());
-        if (distance.x < 2 && distance.y < 2 && distance.z < 2)
+        if (distance.x >= attackDistance && distance.z >= attackDistance)
         {
-            playerScript.playerData.health -= 0.1f;
-            Debug.Log("Damaged Player For 5 Dmg. Player Health @ " + playerScript.playerData.health);
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                Attack();
+                lastAttackTime = Time.time;
+            }
         }
     }
 
@@ -49,7 +65,25 @@ public class EnemyScript : MonoBehaviour
     void MoveTowardsPlayer()
     {
         Vector3 _direction = (player.transform.position - transform.position).normalized;
-        _direction.y = 0; // Keep the enemy moving horizontally
-        transform.position += (_direction * (Time.deltaTime * moveSpeed));
+        _direction.y = 0;
+        distance = Vector3.Distance(transform.position, player.transform.position);
+
+        if (distance > attackDistance)
+        {
+            currentSpeed = Math.Min(currentSpeed + (acceleration * Time.deltaTime), maxSpeed);
+            transform.position += _direction * currentSpeed * Time.deltaTime;
+        }
+        else 
+        {
+            currentSpeed = 0;
+        }
+        /*velocity += (_direction * (Time.deltaTime * moveSpeed));
+        transform.position = velocity;*/
+    }
+
+    void Attack() 
+    {
+        playerScript.playerData.health -= 5f;
+        Debug.Log("Attacked Player For 5 Dmg. Player Health: " + playerScript.playerData.health);
     }
 }
