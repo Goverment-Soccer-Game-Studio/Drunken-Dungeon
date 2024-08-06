@@ -18,12 +18,7 @@ public class DoorTeleport : MonoBehaviour
             LoadNextScene();
         }
     }
-
-<<<<<<< HEAD
-    public void LoadRandomScene()
-=======
-    private void LoadNextScene()
->>>>>>> origin/lorenzo-levels
+    public void LoadNextScene()
     {
         if (sceneNames.Length == 0)
         {

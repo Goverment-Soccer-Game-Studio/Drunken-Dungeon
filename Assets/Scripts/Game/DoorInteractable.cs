@@ -10,7 +10,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        doorTP.LoadRandomScene();
+        doorTP.LoadNextScene();
         return true;
     }
 }
