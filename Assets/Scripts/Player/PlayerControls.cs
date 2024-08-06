@@ -230,6 +230,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Escape"",
+            ""id"": ""a88c1bc6-48fa-494e-b778-6a16ace05fbc"",
+            ""actions"": [
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""216885f9-7b53-48a4-96b1-d7e4241ce10e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d7ee538d-1978-40ba-a19b-cedd219da271"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -247,6 +275,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Interact
         m_Interact = asset.FindActionMap("Interact", throwIfNotFound: true);
         m_Interact_Interact = m_Interact.FindAction("Interact", throwIfNotFound: true);
+        // Escape
+        m_Escape = asset.FindActionMap("Escape", throwIfNotFound: true);
+        m_Escape_Escape = m_Escape.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -474,6 +505,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public InteractActions @Interact => new InteractActions(this);
+
+    // Escape
+    private readonly InputActionMap m_Escape;
+    private List<IEscapeActions> m_EscapeActionsCallbackInterfaces = new List<IEscapeActions>();
+    private readonly InputAction m_Escape_Escape;
+    public struct EscapeActions
+    {
+        private @PlayerControls m_Wrapper;
+        public EscapeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Escape => m_Wrapper.m_Escape_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_Escape; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(EscapeActions set) { return set.Get(); }
+        public void AddCallbacks(IEscapeActions instance)
+        {
+            if (instance == null || m_Wrapper.m_EscapeActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_EscapeActionsCallbackInterfaces.Add(instance);
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
+        }
+
+        private void UnregisterCallbacks(IEscapeActions instance)
+        {
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
+        }
+
+        public void RemoveCallbacks(IEscapeActions instance)
+        {
+            if (m_Wrapper.m_EscapeActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IEscapeActions instance)
+        {
+            foreach (var item in m_Wrapper.m_EscapeActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_EscapeActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public EscapeActions @Escape => new EscapeActions(this);
     public interface IGroundMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -489,5 +566,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IInteractActions
     {
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IEscapeActions
+    {
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

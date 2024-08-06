@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2133241768822393118}
   - component: {fileID: 6057338659376287145}
+  - component: {fileID: 6565554666999183856}
   m_Layer: 0
   m_Name: ExitDoor
   m_TagString: Untagged

@@ -18,8 +18,7 @@ public class DoorTeleport : MonoBehaviour
             LoadNextScene();
         }
     }
-
-    private void LoadNextScene()
+    public void LoadNextScene()
     {
         if (sceneNames.Length == 0)
         {
