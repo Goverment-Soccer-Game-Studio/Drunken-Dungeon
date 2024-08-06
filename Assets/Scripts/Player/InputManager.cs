@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] Movement movement;
+    [SerializeField] public Movement movement;
     [SerializeField] MouseCamera mouseCamera;
     [SerializeField] FightControls fightControls;
     [SerializeField] Interactor interactor;
@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
     //Bool to see if the player can move or use their camera
     bool canMove = true;
     public bool gamePaused = false;
-    bool inInteraction = false;
+    public bool inInteraction = false;
     Camera playerCam;
     Camera interactionCam;
 
@@ -65,28 +65,17 @@ public class InputManager : MonoBehaviour
                 barControls.RecieveInputL(barActions.SelectionLeft.triggered);
                 barControls.RecieveInputR(barActions.SelectionRight.triggered);
                 barControls.RecieveInputConfirm(barActions.Confirm.triggered);
+                barControls.RecieveInputEscape(barActions.Escape.triggered);
             }
         }
 
         //Pause & Interaction controls
-        if (playerControls.Escape.Escape.triggered)
+        if (playerControls.Escape.Escape.triggered && !inInteraction)
         {
-            //If the game isnt paused but in an interaction, the player can press escape to leave the interaction
             if (!gamePaused)
             {
-                if (inInteraction)
-                {
-                    canMove = true;
-                    EndInteraction();
-                    inInteraction = false;
-                }
-                //If the player isnt in an interaction and escape is pressed, it will pause the game.
-                else
-                {
-                    PauseGame();
-                }
+                PauseGame();
             }
-            //If the game is paused and the player presses escape, unpause the game.
             else
             {
                 ResumeGame();
@@ -114,44 +103,6 @@ public class InputManager : MonoBehaviour
     public void EnablePlayerInput(bool b)
     {
         canMove = b;
-    }
-
-    //If an interaction is started, set the bool to true so that it can disable the controls.
-    public void StartInteraction(bool b)
-    {
-        inInteraction = b;
-        movement.enabled = !b;
-    }
-    //If an interaction has a camera, you can disable the players camera and enable the interaction camera.
-    public void StartInteraction(bool b, Camera pInteractionCam, Camera playerCamera)
-    {
-        inInteraction = b;
-        playerCamera.enabled = !b;
-        playerCam = playerCamera;
-        pInteractionCam.enabled = b;
-        interactionCam = pInteractionCam;
-        movement.enabled = !b;
-    }
-
-    public void StartBarInteraction(bool b, Camera pInteractionCam, Camera playerCamera)
-    {
-        inInteraction = b;
-        playerCamera.enabled = !b;
-        playerCam = playerCamera;
-        pInteractionCam.enabled = b;
-        interactionCam = pInteractionCam;
-        movement.enabled = !b;
-        barControls.enabled = b;
-    }
-
-    //Disable the interaction camera, enables the player camera and sets it up for the next ineraction
-    private void EndInteraction()
-    {
-        interactionCam.enabled = false;
-        playerCam.enabled = true;
-        interactionCam = null;
-        playerCam = null;
-        movement.enabled = true;
     }
 
     private void OnEnable()

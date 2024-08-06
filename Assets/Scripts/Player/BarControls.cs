@@ -9,6 +9,8 @@ public class BarControls : MonoBehaviour
     bool drinkInputR;
     bool drinkInputL;
     bool confirmBool;
+    bool escapeBool;
+    [SerializeField] BarScript barScript;
     [Header("Drinks")]
     [SerializeField] GameObject[] drinks;
     private int selectedDrink = 0;
@@ -36,6 +38,11 @@ public class BarControls : MonoBehaviour
             Debug.Log("Drink Selected");
             finalDrink.Add(drinks[selectedDrink].gameObject);
         }
+        if (escapeBool)
+        {
+            barScript.EndBarInteraction();
+            escapeBool = false;
+        }
     }
 
     public void RecieveInputR(bool dInput)
@@ -51,5 +58,10 @@ public class BarControls : MonoBehaviour
     public void RecieveInputConfirm(bool dInput)
     {
         confirmBool = dInput;
+    }
+
+    public void RecieveInputEscape(bool dInput)
+    {
+        escapeBool = dInput;
     }
 }

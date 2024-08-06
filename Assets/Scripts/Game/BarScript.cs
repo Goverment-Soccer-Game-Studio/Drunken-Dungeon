@@ -11,6 +11,7 @@ public class BarScript : MonoBehaviour, IInteractable
     [SerializeField] Animator barAnimator;
     [SerializeField] GameObject[] allBarDrinks;
     [SerializeField] GameObject[] activeBarDrinks;
+    [SerializeField] BarControls barControls;
     [Header("Player Attributes")]
     [SerializeField] Camera playerCamera;
     [SerializeField] InputManager inputManager;
@@ -20,9 +21,29 @@ public class BarScript : MonoBehaviour, IInteractable
     public bool Interact(Interactor interactor)
     {
         //Disable the player controls and turn off the player camera
-        inputManager.EnablePlayerInput(false);
-        inputManager.StartBarInteraction(true, barCamera, playerCamera);
+        StartBarInteraction();
         barAnimator.SetTrigger("BarInteract");
         return true;
+    }
+
+    public bool EndBarInteraction()
+    {
+        inputManager.EnablePlayerInput(true);
+        barControls.enabled = false;
+        barCamera.enabled = false;
+        playerCamera.enabled = true;
+        inputManager.inInteraction = false;
+        inputManager.movement.enabled = true;
+        return true;
+    }
+
+    public void StartBarInteraction()
+    {
+        inputManager.EnablePlayerInput(false);
+        inputManager.inInteraction = true;
+        barCamera.enabled = true;
+        playerCamera.enabled = false;
+        barControls.enabled = true;
+        inputManager.movement.enabled = false;
     }
 }

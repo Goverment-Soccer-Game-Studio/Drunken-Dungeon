@@ -1203,6 +1203,7 @@ MonoBehaviour:
   activeBarDrinks:
   - {fileID: 1957247345}
   - {fileID: 1957247345}
+  barControls: {fileID: 1955458168}
   playerCamera: {fileID: 1265938365}
   inputManager: {fileID: 1866502949}
 --- !u!1 &1282747446
@@ -1518,6 +1519,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7927229335668947165, guid: 06f843c7729b99440a115d836779b684, type: 3}
   m_PrefabInstance: {fileID: 22243076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955458168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9047003503989957441, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+  m_PrefabInstance: {fileID: 5171073376222640929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5410a700ec06dc4989546a3f5a59453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1957247345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6115026172033719137, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
@@ -1692,6 +1704,14 @@ PrefabInstance:
       propertyPath: barCamera
       value: 
       objectReference: {fileID: 729686444}
+    - target: {fileID: 9047003503989957441, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+      propertyPath: barScript
+      value: 
+      objectReference: {fileID: 1281493056}
+    - target: {fileID: 9047003503989957441, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9047003503989957441, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: drinks.Array.data[0]
       value: 

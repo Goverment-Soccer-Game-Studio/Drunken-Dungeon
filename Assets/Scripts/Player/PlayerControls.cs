@@ -289,6 +289,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""10834edb-ed94-40df-bcd0-6c858bcc7194"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -346,6 +355,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bcdb240-ba66-408d-b62b-c65002bc0fce"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -373,6 +393,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_BarControls_SelectionLeft = m_BarControls.FindAction("SelectionLeft", throwIfNotFound: true);
         m_BarControls_SelectionRight = m_BarControls.FindAction("SelectionRight", throwIfNotFound: true);
         m_BarControls_Confirm = m_BarControls.FindAction("Confirm", throwIfNotFound: true);
+        m_BarControls_Escape = m_BarControls.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -653,6 +674,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_BarControls_SelectionLeft;
     private readonly InputAction m_BarControls_SelectionRight;
     private readonly InputAction m_BarControls_Confirm;
+    private readonly InputAction m_BarControls_Escape;
     public struct BarControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -660,6 +682,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @SelectionLeft => m_Wrapper.m_BarControls_SelectionLeft;
         public InputAction @SelectionRight => m_Wrapper.m_BarControls_SelectionRight;
         public InputAction @Confirm => m_Wrapper.m_BarControls_Confirm;
+        public InputAction @Escape => m_Wrapper.m_BarControls_Escape;
         public InputActionMap Get() { return m_Wrapper.m_BarControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -678,6 +701,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Confirm.started += instance.OnConfirm;
             @Confirm.performed += instance.OnConfirm;
             @Confirm.canceled += instance.OnConfirm;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
 
         private void UnregisterCallbacks(IBarControlsActions instance)
@@ -691,6 +717,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Confirm.started -= instance.OnConfirm;
             @Confirm.performed -= instance.OnConfirm;
             @Confirm.canceled -= instance.OnConfirm;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
 
         public void RemoveCallbacks(IBarControlsActions instance)
@@ -733,5 +762,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSelectionLeft(InputAction.CallbackContext context);
         void OnSelectionRight(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }
