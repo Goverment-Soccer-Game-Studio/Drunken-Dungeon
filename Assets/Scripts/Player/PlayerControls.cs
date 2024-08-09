@@ -258,6 +258,116 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BarControls"",
+            ""id"": ""ff75a412-7599-4ca4-b6f5-7ae27804147b"",
+            ""actions"": [
+                {
+                    ""name"": ""SelectionLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7d6e76b-fb59-411a-8bf0-7ac716def1b8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectionRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""553ae9bd-089e-4603-9763-5967b0d5800a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""517e22bc-dcef-40d9-9a94-5ec01dffcee6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""10834edb-ed94-40df-bcd0-6c858bcc7194"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d4309c5c-6899-4679-9d04-99eba55cd7cf"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectionLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b767989-ed21-493a-a5a4-0b089a43ffde"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectionLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60ea4c12-86c0-4803-89de-d392858e2f87"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectionRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1470de70-fbec-43e9-b68c-12822515603d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectionRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eee1ba89-9f60-402e-b21b-889491053288"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bcdb240-ba66-408d-b62b-c65002bc0fce"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -278,6 +388,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Escape
         m_Escape = asset.FindActionMap("Escape", throwIfNotFound: true);
         m_Escape_Escape = m_Escape.FindAction("Escape", throwIfNotFound: true);
+        // BarControls
+        m_BarControls = asset.FindActionMap("BarControls", throwIfNotFound: true);
+        m_BarControls_SelectionLeft = m_BarControls.FindAction("SelectionLeft", throwIfNotFound: true);
+        m_BarControls_SelectionRight = m_BarControls.FindAction("SelectionRight", throwIfNotFound: true);
+        m_BarControls_Confirm = m_BarControls.FindAction("Confirm", throwIfNotFound: true);
+        m_BarControls_Escape = m_BarControls.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -551,6 +667,76 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public EscapeActions @Escape => new EscapeActions(this);
+
+    // BarControls
+    private readonly InputActionMap m_BarControls;
+    private List<IBarControlsActions> m_BarControlsActionsCallbackInterfaces = new List<IBarControlsActions>();
+    private readonly InputAction m_BarControls_SelectionLeft;
+    private readonly InputAction m_BarControls_SelectionRight;
+    private readonly InputAction m_BarControls_Confirm;
+    private readonly InputAction m_BarControls_Escape;
+    public struct BarControlsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public BarControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectionLeft => m_Wrapper.m_BarControls_SelectionLeft;
+        public InputAction @SelectionRight => m_Wrapper.m_BarControls_SelectionRight;
+        public InputAction @Confirm => m_Wrapper.m_BarControls_Confirm;
+        public InputAction @Escape => m_Wrapper.m_BarControls_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_BarControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BarControlsActions set) { return set.Get(); }
+        public void AddCallbacks(IBarControlsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BarControlsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BarControlsActionsCallbackInterfaces.Add(instance);
+            @SelectionLeft.started += instance.OnSelectionLeft;
+            @SelectionLeft.performed += instance.OnSelectionLeft;
+            @SelectionLeft.canceled += instance.OnSelectionLeft;
+            @SelectionRight.started += instance.OnSelectionRight;
+            @SelectionRight.performed += instance.OnSelectionRight;
+            @SelectionRight.canceled += instance.OnSelectionRight;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
+        }
+
+        private void UnregisterCallbacks(IBarControlsActions instance)
+        {
+            @SelectionLeft.started -= instance.OnSelectionLeft;
+            @SelectionLeft.performed -= instance.OnSelectionLeft;
+            @SelectionLeft.canceled -= instance.OnSelectionLeft;
+            @SelectionRight.started -= instance.OnSelectionRight;
+            @SelectionRight.performed -= instance.OnSelectionRight;
+            @SelectionRight.canceled -= instance.OnSelectionRight;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
+        }
+
+        public void RemoveCallbacks(IBarControlsActions instance)
+        {
+            if (m_Wrapper.m_BarControlsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IBarControlsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BarControlsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BarControlsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public BarControlsActions @BarControls => new BarControlsActions(this);
     public interface IGroundMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -569,6 +755,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     }
     public interface IEscapeActions
     {
+        void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface IBarControlsActions
+    {
+        void OnSelectionLeft(InputAction.CallbackContext context);
+        void OnSelectionRight(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
     }
 }
