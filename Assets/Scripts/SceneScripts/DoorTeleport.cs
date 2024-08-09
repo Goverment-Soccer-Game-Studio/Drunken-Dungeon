@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorTeleport : MonoBehaviour, IInteractable
+public class DoorTeleport : MonoBehaviour
 {
     [SerializeField] private string[] sceneNames; // List of regular scene names
     [SerializeField] private string[] rewardSceneNames; // List of reward scene names
@@ -9,14 +9,7 @@ public class DoorTeleport : MonoBehaviour, IInteractable
 
     private static int roomCounter = 0; // Counter to keep track of the number of rooms loaded
 
-    public bool Interact(Interactor interactor)
-    {
-        return false;
-    }
-
-    public string interactionPrompt => "Enter Door";
-
-    private void OnTriggerEnter(Collider other)
+/*    private void OnTriggerEnter(Collider other)
     {
         // Check if the player has collided with the door
         if (other.CompareTag("Player"))
@@ -24,7 +17,7 @@ public class DoorTeleport : MonoBehaviour, IInteractable
             // Load the appropriate scene
             LoadNextScene();
         }
-    }
+    }*/
     public void LoadNextScene()
     {
         if (sceneNames.Length == 0)
