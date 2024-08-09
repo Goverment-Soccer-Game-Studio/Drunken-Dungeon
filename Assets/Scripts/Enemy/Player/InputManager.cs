@@ -85,6 +85,7 @@ public class InputManager : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("Pause Game");
         gamePaused = true;
         canMove = false;
         Time.timeScale = 0f;

@@ -17,6 +17,8 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
 
+    public string drinkDescription => "Bar dmg up";
+
     public bool Interact(Interactor interactor)
     {
         //Drink when interacted

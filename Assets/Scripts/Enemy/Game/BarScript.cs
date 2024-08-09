@@ -28,6 +28,7 @@ public class BarScript : MonoBehaviour, IInteractable
 
     public bool EndBarInteraction()
     {
+        Debug.Log("End Bar Interact");
         inputManager.EnablePlayerInput(true);
         barControls.enabled = false;
         barCamera.enabled = false;
@@ -37,13 +38,15 @@ public class BarScript : MonoBehaviour, IInteractable
         return true;
     }
 
-    public void StartBarInteraction()
+    public bool StartBarInteraction()
     {
+        Debug.Log("Start Bar Interact");
         inputManager.EnablePlayerInput(false);
-        inputManager.inInteraction = true;
+        barControls.enabled = true;
         barCamera.enabled = true;
         playerCamera.enabled = false;
-        barControls.enabled = true;
+        inputManager.inInteraction = true;
         inputManager.movement.enabled = false;
+        return true;
     }
 }

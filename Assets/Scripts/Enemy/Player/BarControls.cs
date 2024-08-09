@@ -40,6 +40,10 @@ public class BarControls : MonoBehaviour
         }
         if (escapeBool)
         {
+            //Reset the selected drink to the start
+            selectedDrink = 0;
+            //Clear out the final drink
+            finalDrink.Clear();
             barScript.EndBarInteraction();
             escapeBool = false;
         }
