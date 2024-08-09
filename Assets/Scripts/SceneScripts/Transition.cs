@@ -9,6 +9,11 @@ public class DoorTeleport : MonoBehaviour, IInteractable
 
     private static int roomCounter = 0; // Counter to keep track of the number of rooms loaded
 
+    public bool Interact(Interactor interactor)
+    {
+        return false;
+    }
+
     public string interactionPrompt => "Enter Door";
 
     private void OnTriggerEnter(Collider other)
