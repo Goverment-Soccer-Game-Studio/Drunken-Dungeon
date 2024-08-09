@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerScript PlayerScript;
+    [SerializeField] float AreaNumber = 0;
 
     void Update()
     {
@@ -17,4 +18,6 @@ public class GameManager : MonoBehaviour
             PlayerScript.playerData.health = 50;
         }
     }
+
+    
 }
