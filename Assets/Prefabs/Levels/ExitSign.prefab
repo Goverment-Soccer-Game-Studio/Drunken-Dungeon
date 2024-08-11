@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9058427404112695396}
   - component: {fileID: 6705656134507220918}
   - component: {fileID: 8267835353988551147}
+  - component: {fileID: 4008970936983212341}
   m_Layer: 0
   m_Name: ExitSign
   m_TagString: Untagged
@@ -123,3 +124,18 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &4008970936983212341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145476121842011232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f971040b2ad7da428d90fb67dbfe9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMaterial: {fileID: 2100000, guid: 645ecea6240285f46ba36248fd292e05, type: 2}
+  rewardMaterial: {fileID: 2100000, guid: 9cb06e7663279884e9c24f71a3aecd2c, type: 2}
+  bossMaterial: {fileID: 2100000, guid: 82ccc0d330acc40488e602c3c66965dc, type: 2}
