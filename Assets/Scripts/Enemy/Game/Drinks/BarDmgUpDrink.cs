@@ -37,6 +37,6 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
         //Drink effects
         playerData.damage += 1.5f;
         //Destroy the drink
-        Destroy(this.gameObject, 0.5f);
+        //Destroy(this.gameObject, 0.5f);
     }
 }

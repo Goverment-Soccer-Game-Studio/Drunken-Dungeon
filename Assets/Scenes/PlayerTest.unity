@@ -164,6 +164,11 @@ Transform:
   - {fileID: 1442897096}
   m_Father: {fileID: 232218391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &156237852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7927229335669171453, guid: 06f843c7729b99440a115d836779b684, type: 3}
+  m_PrefabInstance: {fileID: 1442897095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &194892122
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +447,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 194892123}
     m_Modifications:
+    - target: {fileID: 3949281613726676197, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
+      propertyPath: barUI
+      value: 
+      objectReference: {fileID: 948270788}
+    - target: {fileID: 3949281613726676197, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
+      propertyPath: playerDrinkHolder
+      value: 
+      objectReference: {fileID: 53042133}
     - target: {fileID: 6055729811110965643, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -485,6 +498,10 @@ PrefabInstance:
     - target: {fileID: 6115026172033719137, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
       propertyPath: m_Name
       value: BarMaxHPDrink
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115026172033719137, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -737,6 +754,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 232218391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &650900272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6115026172033719137, guid: 0e53294a042a40e4db3e049085cdaddf, type: 3}
+  m_PrefabInstance: {fileID: 601759391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &658863918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,86 +1108,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0331b169005eb1d469455efaa6b9024a, type: 3}
---- !u!1001 &926175568
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_Name
-      value: BarSpeedUpDrink
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.1828108
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.855653e-19
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.7528672
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 926175570}
-  m_SourcePrefab: {fileID: 100100000, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
---- !u!1 &926175569 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: 25cf76f4e3d935e44a37add6ddf97bfb, type: 3}
-  m_PrefabInstance: {fileID: 926175568}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &926175570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926175569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36e2b291c3f1b647926d7effc5f04b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
-  playerDrinkHolder: {fileID: 0}
-  playerData: {fileID: 0}
 --- !u!1 &948270788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,15 +1389,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barCamera: {fileID: 729686444}
   barAnimator: {fileID: 1281493055}
-  allBarDrinks:
-  - {fileID: 0}
-  - {fileID: 0}
-  activeBarDrinks:
-  - {fileID: 0}
-  - {fileID: 0}
   barControls: {fileID: 1964954884}
+  drinks:
+  - {fileID: 650900272}
+  - {fileID: 156237852}
   playerCamera: {fileID: 1265938365}
   inputManager: {fileID: 1866502949}
+  playerAnimator: {fileID: 454245409}
 --- !u!1 &1282747446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1549,111 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 232218391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1601245968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601245972}
+  - component: {fileID: 1601245971}
+  - component: {fileID: 1601245970}
+  - component: {fileID: 1601245969}
+  m_Layer: 0
+  m_Name: TempDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1601245969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601245968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1601245970
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601245968}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1601245971
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601245968}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1601245972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601245968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.75, y: 3.5, z: 9.5}
+  m_LocalScale: {x: 4, y: 8, z: 0.43754}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653124965
 GameObject:
@@ -1887,9 +1932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barScript: {fileID: 1281493056}
-  drinks:
-  - {fileID: 0}
-  - {fileID: 0}
+  selectedDrink: 0
   barCamera: {fileID: 729686444}
 --- !u!1001 &2680259020368950052
 PrefabInstance:
@@ -2012,21 +2055,25 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 1440760029}
+    - target: {fileID: 801171895245942711, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3843781816896345347, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: barControls
       value: 
       objectReference: {fileID: 1964954884}
     - target: {fileID: 6259546293790272057, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 6259546293790272057, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6259546293790272057, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6259546293790272057, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2294,5 +2341,5 @@ SceneRoots:
   - {fileID: 753999832}
   - {fileID: 7279260952872290080}
   - {fileID: 658863918}
-  - {fileID: 926175568}
   - {fileID: 1752811401}
+  - {fileID: 1601245972}

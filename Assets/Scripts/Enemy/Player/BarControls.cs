@@ -12,15 +12,13 @@ public class BarControls : MonoBehaviour
     bool escapeBool;
     [SerializeField] BarScript barScript;
     [Header("Drinks")]
-    [SerializeField] GameObject[] drinks;
-    private int selectedDrink = 0;
+    public int selectedDrink = 0;
     [SerializeField] Camera barCamera;
     List<GameObject> finalDrink;
 
     private void Update()
     {
-        barCamera.transform.LookAt(drinks[selectedDrink].transform.position);
-        if (drinkInputR && selectedDrink != (drinks.Length - 1))
+        if (drinkInputR && selectedDrink != (barScript.drinks.Length - 1))
         {
             Debug.Log("Right Drink");
             selectedDrink++;
@@ -35,15 +33,11 @@ public class BarControls : MonoBehaviour
         if (confirmBool)
         {
             //Add UI controls stuff
+            barScript.AddDrink(selectedDrink);
             Debug.Log("Drink Selected");
-            finalDrink.Add(drinks[selectedDrink].gameObject);
         }
         if (escapeBool)
         {
-            //Reset the selected drink to the start
-            selectedDrink = 0;
-            //Clear out the final drink
-            finalDrink.Clear();
             barScript.EndBarInteraction();
             escapeBool = false;
         }
