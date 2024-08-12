@@ -6,8 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject Player;
     [SerializeField] PlayerScript PlayerScript;
     [SerializeField] float AreaNumber = 0;
+
+    private static GameManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+        if (Player != null)
+        {
+            PlayerScript = Player.GetComponent<PlayerScript>();
+        }
+    }
 
     void Update()
     {
@@ -19,5 +44,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    void GiveEnemyData()
+    {
+    }
 }

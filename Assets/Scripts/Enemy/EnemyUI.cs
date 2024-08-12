@@ -18,7 +18,7 @@ public class EnemyUI : MonoBehaviour
 
     private void Update()
     {
-        healthBar.fillAmount = enemy.health / 100f;
+        healthBar.fillAmount = enemy.Health / 100f;
         BillboardHP(healthBar);
         BillboardHP(healthBarBg);
     }
