@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class TestEnemy : MonoBehaviour, IEnemy
 {
-    public new string name { get; set; }
-    public float health { get; set; }
+    public new string Name { get; set; }
+    public float Health { get; set; }
+    public GameObject Player { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 100f;
+        Health = 100f;
     }
 
     // Update is called once per frame
@@ -26,13 +27,13 @@ public class TestEnemy : MonoBehaviour, IEnemy
         Debug.Log(other.gameObject.name);
         //10 is just the test number
         OnDamage(10f);
-        OnDeath(health <= 0);
+        OnDeath(Health <= 0);
     }
 
     public void OnDamage(float damage)
     {
         Debug.Log("Dummy: ouch!");
-        health -= damage;
+        Health -= damage;
     }
 
     public void OnDeath(bool h)
