@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7815588505675290276}
   m_Layer: 0
   m_Name: UIPanel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7487576036203864995}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7102271143487448088}
   m_Layer: 0
   m_Name: InteractionPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 3416306202424128238}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,9 +612,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4854151589880903094, guid: 90effbe844f99bd4aa26cfcc09695ee9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6832765407577743607, guid: 90effbe844f99bd4aa26cfcc09695ee9, type: 3}
       propertyPath: m_Name
       value: RArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832765407577743607, guid: 90effbe844f99bd4aa26cfcc09695ee9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -787,9 +795,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4231891709722734036, guid: da762117ac3a9d74ea8b5738dd88bff9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6832765407577743607, guid: da762117ac3a9d74ea8b5738dd88bff9, type: 3}
       propertyPath: m_Name
       value: LArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832765407577743607, guid: da762117ac3a9d74ea8b5738dd88bff9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

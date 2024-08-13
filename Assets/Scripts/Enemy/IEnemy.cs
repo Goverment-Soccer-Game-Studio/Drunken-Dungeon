@@ -8,8 +8,9 @@ using UnityEngine.UI;
 //Each enemy requires a rigidbody for combat, but cannot do [RequireComponent]
 public interface IEnemy
 {
-    public string name { get; set; }
-    public float health { get; set; }
+    string Name { get; set; }
+    float Health { get; set; }
+
     //public Image hpBar { get; set; }
 
     public void OnDamage(float damage);

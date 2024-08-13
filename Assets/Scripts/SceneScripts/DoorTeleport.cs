@@ -9,15 +9,6 @@ public class DoorTeleport : MonoBehaviour
 
     private static int roomCounter = 0; // Counter to keep track of the number of rooms loaded
 
-/*    private void OnTriggerEnter(Collider other)
-    {
-        // Check if the player has collided with the door
-        if (other.CompareTag("Player"))
-        {
-            // Load the appropriate scene
-            LoadNextScene();
-        }
-    }*/
     public void LoadNextScene()
     {
         if (sceneNames.Length == 0)
@@ -30,6 +21,14 @@ public class DoorTeleport : MonoBehaviour
 
         // Increment room counter
         roomCounter++;
+
+        // Get the ExitSignMaterialChanger component from the ExitSign object
+        ExitSignMaterialChanger exitSignChanger = GameObject.Find("ExitSign").GetComponent<ExitSignMaterialChanger>();
+        if (exitSignChanger != null)
+        {
+            // Update the ExitSign material based on the new roomCounter value
+            exitSignChanger.UpdateMaterial(roomCounter);
+        }
 
         // Determine the type of room to load based on the counter
         if (roomCounter % 10 == 0 && bossSceneNames.Length > 0)
@@ -53,5 +52,11 @@ public class DoorTeleport : MonoBehaviour
 
         // Load the chosen scene
         SceneManager.LoadScene(nextScene);
+    }
+
+    // Add this method to allow the ExitSignMaterialChanger to access the roomCounter
+    public static int GetRoomCounter()
+    {
+        return roomCounter;
     }
 }
