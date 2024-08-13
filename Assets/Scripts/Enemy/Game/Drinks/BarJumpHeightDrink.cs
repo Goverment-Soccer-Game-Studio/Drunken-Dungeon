@@ -4,20 +4,20 @@ using System.Xml.Serialization;
 using UnityEngine;
 
 //This code will be duplicated for each drink script, doing different things
-public class BarSpeedUpDrink : MonoBehaviour, IInteractable, IDrink
+public class BarJumpHeightDrink : MonoBehaviour, IInteractable, IDrink
 {
     //Input for player animator, object, and data
     [SerializeField] private Animator playerAnimator;
     [SerializeField] GameObject playerDrinkHolder;
     [SerializeField] PlayerData playerData;
-    public string drinkName => "Normal Drink";
+    public string drinkName => "Bar Jump Height Drink";
     public string interactionPrompt => "Drink";
     //Set the inherited variables
     public Animator iAnimator => playerAnimator;
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
 
-    public string drinkDescription => "Do speed";
+    public string drinkDescription => "Do jump";
 
     public bool Interact(Interactor interactor)
     {
@@ -36,7 +36,7 @@ public class BarSpeedUpDrink : MonoBehaviour, IInteractable, IDrink
         //iAnimator.SetTrigger("Drink");
         Debug.Log(drinkName + " has been drunk");
         //Drink effects
-        playerData.speed += 0.5f;
+        playerData.jumpHeight += 0.25f;
         //Destroy the drink
         //Destroy(this.gameObject, 0.5f);
     }

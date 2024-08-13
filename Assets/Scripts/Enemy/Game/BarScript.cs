@@ -9,41 +9,76 @@ public class BarScript : MonoBehaviour, IInteractable
     [Header("Bar Items")]
     [SerializeField] Camera barCamera;
     [SerializeField] Animator barAnimator;
-    [SerializeField] GameObject[] allBarDrinks;
-    [SerializeField] GameObject[] activeBarDrinks;
     [SerializeField] BarControls barControls;
+    [SerializeField] public GameObject[] drinks;
+    private List<GameObject> finalDrink;
+    private bool barUsed = false;
     [Header("Player Attributes")]
     [SerializeField] Camera playerCamera;
     [SerializeField] InputManager inputManager;
+    [SerializeField] Animator playerAnimator;
 
     public string interactionPrompt => "F Interact";
 
     public bool Interact(Interactor interactor)
     {
         //Disable the player controls and turn off the player camera
-        StartBarInteraction();
-        barAnimator.SetTrigger("BarInteract");
+        if (!barUsed)
+        {
+            StartBarInteraction();
+            barAnimator.SetTrigger("BarInteract");
+        }
+        return true;
+    }
+
+    private void Update()
+    {
+        barCamera.transform.LookAt(drinks[barControls.selectedDrink].transform);
+    }
+
+    public bool StartBarInteraction()
+    {
+        Debug.Log("Start Bar Interact");
+        finalDrink = new List<GameObject>();
+        inputManager.EnablePlayerInput(false);
+        barControls.enabled = true;
+        barCamera.enabled = true;
+        playerCamera.enabled = false;
+        inputManager.inInteraction = true;
+        inputManager.movement.enabled = false;
         return true;
     }
 
     public bool EndBarInteraction()
     {
+        Debug.Log("End Bar Interact");
         inputManager.EnablePlayerInput(true);
         barControls.enabled = false;
         barCamera.enabled = false;
         playerCamera.enabled = true;
         inputManager.inInteraction = false;
         inputManager.movement.enabled = true;
+        //playerAnimator.SetTrigger("AfterBar");
         return true;
     }
 
-    public void StartBarInteraction()
+    public bool AddDrink(int i)
     {
-        inputManager.EnablePlayerInput(false);
-        inputManager.inInteraction = true;
-        barCamera.enabled = true;
-        playerCamera.enabled = false;
-        barControls.enabled = true;
-        inputManager.movement.enabled = false;
+        finalDrink.Add(drinks[i]);
+        if (finalDrink.Count < 5)
+        {
+            Debug.Log("Drinks in: " + finalDrink.Count);
+            return true;
+        }
+        else
+        {
+            foreach (var drink in finalDrink)
+            {
+                drink.GetComponent<IDrink>().OnDrink();
+            }
+            barUsed = true;
+            EndBarInteraction();
+        }
+        return false;
     }
 }

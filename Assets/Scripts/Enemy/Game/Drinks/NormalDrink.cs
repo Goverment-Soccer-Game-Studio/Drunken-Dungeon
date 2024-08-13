@@ -17,6 +17,8 @@ public class NormalDrink : MonoBehaviour, IInteractable, IDrink
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
 
+    public string drinkDescription => "Basic b drink";
+
     public bool Interact(Interactor interactor)
     {
         //Drink when interacted
