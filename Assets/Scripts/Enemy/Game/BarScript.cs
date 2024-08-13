@@ -12,6 +12,7 @@ public class BarScript : MonoBehaviour, IInteractable
     [SerializeField] BarControls barControls;
     [SerializeField] public GameObject[] drinks;
     private List<GameObject> finalDrink;
+    private bool barUsed = false;
     [Header("Player Attributes")]
     [SerializeField] Camera playerCamera;
     [SerializeField] InputManager inputManager;
@@ -22,8 +23,11 @@ public class BarScript : MonoBehaviour, IInteractable
     public bool Interact(Interactor interactor)
     {
         //Disable the player controls and turn off the player camera
-        StartBarInteraction();
-        barAnimator.SetTrigger("BarInteract");
+        if (!barUsed)
+        {
+            StartBarInteraction();
+            barAnimator.SetTrigger("BarInteract");
+        }
         return true;
     }
 
@@ -72,6 +76,7 @@ public class BarScript : MonoBehaviour, IInteractable
             {
                 drink.GetComponent<IDrink>().OnDrink();
             }
+            barUsed = true;
             EndBarInteraction();
         }
         return false;

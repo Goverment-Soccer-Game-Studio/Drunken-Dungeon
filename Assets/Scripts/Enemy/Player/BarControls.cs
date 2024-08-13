@@ -13,8 +13,6 @@ public class BarControls : MonoBehaviour
     [SerializeField] BarScript barScript;
     [Header("Drinks")]
     public int selectedDrink = 0;
-    [SerializeField] Camera barCamera;
-    List<GameObject> finalDrink;
 
     private void Update()
     {
