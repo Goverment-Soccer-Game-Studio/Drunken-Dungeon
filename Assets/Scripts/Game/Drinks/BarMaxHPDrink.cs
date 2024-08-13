@@ -11,7 +11,7 @@ public class BarMaxHPDrink : MonoBehaviour, IInteractable, IDrink
     [SerializeField] private Animator playerAnimator;
     [SerializeField] GameObject playerDrinkHolder;
     [SerializeField] PlayerData playerData;
-    public string drinkName => "Normal Drink";
+    public string drinkName => "Health Drink";
     public string interactionPrompt => "Drink";
     //Set the inherited variables
     public Animator iAnimator => playerAnimator;

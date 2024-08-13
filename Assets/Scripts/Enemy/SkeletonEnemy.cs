@@ -25,6 +25,9 @@ public class SkeletonEnemy : MonoBehaviour, IEnemy
     [SerializeField] float currentSpeed;
     [SerializeField] float maxSpeed;
 
+    public float attackCooldown = 3.0f;
+    private float lastAttackTime = -Mathf.Infinity;
+
     private Rigidbody rb;
     private Animator animator;
 
@@ -61,6 +64,7 @@ public class SkeletonEnemy : MonoBehaviour, IEnemy
         LocatePlayer();
         MoveTowardsPlayer();
         UpdateAnimatorValues();
+        IfInRange();
 
         if (Health <= 0)
         {
@@ -92,12 +96,29 @@ public class SkeletonEnemy : MonoBehaviour, IEnemy
         {
             currentSpeed = 0;
         }
-        /*velocity += (_direction * (Time.deltaTime * moveSpeed));
-        transform.position = velocity;*/
+    }
+
+    void IfInRange()
+    {
+        Vector3 distance = rb.transform.position - Player.transform.position;
+        if (distance.x <= attackDistance && distance.z <= attackDistance)
+        {
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                Attack();
+                lastAttackTime = Time.time;
+            }
+        }
     }
 
     void UpdateAnimatorValues()
     {
         animator.SetFloat("Current Speed", currentSpeed);
+    }
+
+    void Attack()
+    {
+        Player.GetComponent<PlayerScript>().playerData.health -= 3f;
+        Debug.Log("Attacked Player For 5 Dmg. Player Health: " + Player.GetComponent<PlayerScript>().playerData.health);
     }
 }

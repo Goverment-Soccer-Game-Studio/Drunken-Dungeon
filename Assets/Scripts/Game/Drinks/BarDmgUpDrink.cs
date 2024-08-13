@@ -10,7 +10,7 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
     [SerializeField] private Animator barAnimator;
     [SerializeField] GameObject playerDrinkHolder;
     [SerializeField] PlayerData playerData;
-    public string drinkName => "Normal Drink";
+    public string drinkName => "Power Up Drink";
     public string interactionPrompt => "Drink";
     //Set the inherited variables
     public Animator iAnimator => barAnimator;
