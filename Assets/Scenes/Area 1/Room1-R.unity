@@ -187,11 +187,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
---- !u!1 &43813135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8342483205306287889, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-  m_PrefabInstance: {fileID: 43813134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &43813136 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 487340361625065493, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
@@ -364,7 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthIncrease: 5
   playerAnimator: {fileID: 43813136}
-  playerDrinkHolder: {fileID: 43813135}
+  playerDrinkHolder: {fileID: 1607245335}
   playerData: {fileID: 11400000, guid: 0763a4bd7e7da004cbaca063ede19597, type: 2}
 --- !u!136 &623812759
 CapsuleCollider:
@@ -550,8 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185d3144d39572b4db835daf5816bcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barAnimator: {fileID: 0}
-  playerDrinkHolder: {fileID: 43813135}
+  barAnimator: {fileID: 43813136}
+  playerDrinkHolder: {fileID: 1607245335}
   playerData: {fileID: 11400000, guid: 0763a4bd7e7da004cbaca063ede19597, type: 2}
 --- !u!136 &1147000328
 CapsuleCollider:
@@ -960,6 +955,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1607245335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7964583157278715669, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+  m_PrefabInstance: {fileID: 43813134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

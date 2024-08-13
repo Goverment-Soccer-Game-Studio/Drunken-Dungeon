@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7815588505675290276
 Transform:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 64
-  playerUI: {fileID: 0}
+  playerUI: {fileID: 3819228917678160857}
   numFound: 0
 --- !u!114 &5631104860205357567
 MonoBehaviour:
@@ -743,6 +743,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7546916948401925978, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
   m_PrefabInstance: {fileID: 4950312609585331683}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3819228917678160857 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+  m_PrefabInstance: {fileID: 4950312609585331683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9e05458bbb6824e9b18ab684c103b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6911855945062102194
 PrefabInstance:
   m_ObjectHideFlags: 0
