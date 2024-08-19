@@ -19,6 +19,11 @@ public class PlayerUI : MonoBehaviour
 
     [Header("Pause Menu")]
     [SerializeField] GameObject pauseGameObj;
+    [SerializeField] GameObject settingsMenu;
+    [SerializeField] Slider vsensSlider;
+    [SerializeField] Slider hsensSlider;
+    [SerializeField] TMP_Text vsensTxt;
+    [SerializeField] TMP_Text hsensTxt;
 
     [Header("Player UI")]
     [SerializeField] Image healthBar;
@@ -37,6 +42,12 @@ public class PlayerUI : MonoBehaviour
         pauseGameObj.SetActive(inputManager.gamePaused);
         healthBar.fillAmount = playerData.health / playerData.maxHealth;
         healthTxt.text = playerData.health.ToString();
+
+        //Sentivity Settings
+        inputManager.mouseCamera.sensX = hsensSlider.value;
+        inputManager.mouseCamera.sensY = vsensSlider.value;
+        hsensTxt.text = (Mathf.Round(hsensSlider.value) / 100).ToString();
+        vsensTxt.text = vsensSlider.value.ToString();
     }
 
     public void Setup(string promptText)
@@ -55,6 +66,12 @@ public class PlayerUI : MonoBehaviour
     public void UIResumeGame()
     {
         inputManager.ResumeGame();
+        settingsMenu.SetActive(false);
+    }
+
+    public void UISettingsMenu()
+    {
+        settingsMenu.SetActive(true);
     }
 
     public void QuitGame()
