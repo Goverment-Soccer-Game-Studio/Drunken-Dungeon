@@ -588,14 +588,6 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 625868652}
-    - target: {fileID: 669985793358452017, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906264020171083440, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5631104860205357567, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: barScript
       value: 
@@ -640,25 +632,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6673004739798658598, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6673004739798658598, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-      propertyPath: m_Center.y
-      value: -0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6846736922295855998, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7814964832421930743, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-      propertyPath: m_Height
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8913524654856423013, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
