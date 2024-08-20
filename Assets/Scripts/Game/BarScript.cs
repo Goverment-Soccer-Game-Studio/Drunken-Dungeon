@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -11,6 +12,8 @@ public class BarScript : MonoBehaviour, IInteractable
     [SerializeField] Animator barAnimator;
     [SerializeField] BarControls barControls;
     [SerializeField] public GameObject[] drinks;
+    [SerializeField] GameObject barUI;
+    [SerializeField] TMP_Text barUITxt;
     private List<GameObject> finalDrink;
     private bool barUsed = false;
     [Header("Player Attributes")]
@@ -39,6 +42,7 @@ public class BarScript : MonoBehaviour, IInteractable
     public bool StartBarInteraction()
     {
         Debug.Log("Start Bar Interact");
+        barUI.gameObject.SetActive(true);
         finalDrink = new List<GameObject>();
         inputManager.EnablePlayerInput(false);
         barControls.enabled = true;
@@ -52,6 +56,7 @@ public class BarScript : MonoBehaviour, IInteractable
     public bool EndBarInteraction()
     {
         Debug.Log("End Bar Interact");
+        barUI.gameObject.SetActive(false);
         inputManager.EnablePlayerInput(true);
         barControls.enabled = false;
         barCamera.enabled = false;
@@ -80,5 +85,10 @@ public class BarScript : MonoBehaviour, IInteractable
             EndBarInteraction();
         }
         return false;
+    }
+
+    public void SetDrinkText(int drink)
+    {
+        barUITxt.text = drinks[drink].GetComponent<IDrink>().drinkName + "\n\n" + drinks[drink].GetComponent<IDrink>().drinkDescription;
     }
 }
