@@ -45,7 +45,7 @@ public class PlayerUI : MonoBehaviour
 
         //Sentivity Settings
         inputManager.mouseCamera.sensX = hsensSlider.value;
-        inputManager.mouseCamera.sensY = vsensSlider.value;
+        inputManager.mouseCamera.sensY = vsensSlider.value / 100;
         hsensTxt.text = (Mathf.Round(hsensSlider.value) / 100).ToString();
         vsensTxt.text = vsensSlider.value.ToString();
     }
@@ -66,12 +66,17 @@ public class PlayerUI : MonoBehaviour
     public void UIResumeGame()
     {
         inputManager.ResumeGame();
-        settingsMenu.SetActive(false);
+        CloseSettingsMenu();
     }
 
-    public void UISettingsMenu()
+    public void OpenSettingsMenu()
     {
         settingsMenu.SetActive(true);
+    }
+
+    public void CloseSettingsMenu()
+    {
+        settingsMenu.SetActive(false);
     }
 
     public void QuitGame()
