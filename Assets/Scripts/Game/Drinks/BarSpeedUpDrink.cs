@@ -17,6 +17,8 @@ public class BarSpeedUpDrink : MonoBehaviour, IInteractable, IDrink
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
 
+    public string drinkDescription => "Do speed";
+
     public bool Interact(Interactor interactor)
     {
         //Drink when interacted
@@ -36,6 +38,6 @@ public class BarSpeedUpDrink : MonoBehaviour, IInteractable, IDrink
         //Drink effects
         playerData.speed += 0.5f;
         //Destroy the drink
-        Destroy(this.gameObject, 0.5f);
+        //Destroy(this.gameObject, 0.5f);
     }
 }

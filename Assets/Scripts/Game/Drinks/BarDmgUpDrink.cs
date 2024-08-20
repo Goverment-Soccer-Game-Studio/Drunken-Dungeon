@@ -11,11 +11,13 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
     [SerializeField] GameObject playerDrinkHolder;
     [SerializeField] PlayerData playerData;
     public string drinkName => "Power Up Drink";
-    public string interactionPrompt => "Drink";
+    public string interactionPrompt => "Drink " + drinkName;
     //Set the inherited variables
     public Animator iAnimator => barAnimator;
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
+
+    public string drinkDescription => "Bar dmg up";
 
     public bool Interact(Interactor interactor)
     {
@@ -26,11 +28,11 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
 
     public void OnDrink() {
         //Set the parent to the right hard
-        //this.gameObject.transform.SetParent(iDrinkHolder.transform);
+        this.gameObject.transform.SetParent(iDrinkHolder.transform);
         //Move the drink to the right hand
-        //this.gameObject.transform.position = iDrinkHolder.transform.position;
+        this.gameObject.transform.position = iDrinkHolder.transform.position;
         //Play the animation
-        //iAnimator.SetTrigger("Drink");
+        iAnimator.SetTrigger("Drink");
         Debug.Log(drinkName + " has been drunk");
         //Drink effects
         playerData.damage += 1.5f;

@@ -7,7 +7,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] public Movement movement;
-    [SerializeField] MouseCamera mouseCamera;
+    [SerializeField] public MouseCamera mouseCamera;
     [SerializeField] FightControls fightControls;
     [SerializeField] Interactor interactor;
     [SerializeField] BarControls barControls;
@@ -85,6 +85,7 @@ public class InputManager : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("Pause Game");
         gamePaused = true;
         canMove = false;
         Time.timeScale = 0f;
