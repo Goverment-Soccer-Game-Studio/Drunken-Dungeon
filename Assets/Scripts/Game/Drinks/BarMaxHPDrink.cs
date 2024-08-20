@@ -19,6 +19,8 @@ public class BarMaxHPDrink : MonoBehaviour, IInteractable, IDrink
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
 
+    public string drinkDescription => "Drink at the bar that increases hp?";
+
     public bool Interact(Interactor interactor)
     {
         //Drink when interacted
