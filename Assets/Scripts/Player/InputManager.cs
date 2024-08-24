@@ -7,7 +7,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] public Movement movement;
-    [SerializeField] public MouseCamera mouseCamera;
+    [SerializeField] MouseCamera mouseCamera;
     [SerializeField] FightControls fightControls;
     [SerializeField] Interactor interactor;
     [SerializeField] BarControls barControls;

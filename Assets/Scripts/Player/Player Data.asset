@@ -18,6 +18,3 @@ MonoBehaviour:
   jumps: 1
   jumpHeight: 3
   damage: 5
-  currentDrinks: []
-  mouseSensX: 8
-  mouseSensY: 0.5

@@ -39,8 +39,6 @@ public class BarControls : MonoBehaviour
             barScript.EndBarInteraction();
             escapeBool = false;
         }
-
-        barScript.SetDrinkText(selectedDrink);
     }
 
     public void RecieveInputR(bool dInput)

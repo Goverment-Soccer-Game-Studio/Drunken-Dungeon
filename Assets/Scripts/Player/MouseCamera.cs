@@ -5,8 +5,8 @@ using UnityEngine;
 public class MouseCamera : MonoBehaviour
 {
     //Sensitivity x and sensitivity y
-    [SerializeField] public float sensX = 8f;
-    [SerializeField] public float sensY = 0.5f;
+    [SerializeField] float sensX = 8f;
+    [SerializeField] float sensY = 0.5f;
     float mouseX;
     float mouseY;
 
