@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TestEnemy : MonoBehaviour, IEnemy
 {
-    public new string Name { get; set; }
+    public string Name { get; set; }
     public float Health { get; set; }
     public GameObject Player { get; set; }
 
