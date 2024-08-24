@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regularMaterial: {fileID: 2100000, guid: 645ecea6240285f46ba36248fd292e05, type: 2}
-  rewardMaterial: {fileID: 2100000, guid: 9cb06e7663279884e9c24f71a3aecd2c, type: 2}
-  bossMaterial: {fileID: 2100000, guid: 82ccc0d330acc40488e602c3c66965dc, type: 2}
+  rewardMaterial: {fileID: 2100000, guid: 9d24d1652512b524fa4e165dd933eecf, type: 2}
+  bossMaterial: {fileID: 2100000, guid: 33c898fff76f45147866c0cd30610d7b, type: 2}
