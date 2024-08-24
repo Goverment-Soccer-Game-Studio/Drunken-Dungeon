@@ -29,10 +29,6 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] Image healthBar;
     [SerializeField] TMP_Text healthTxt;
 
-    [Header("Other")]
-    [SerializeField] Image blackScreen;
-    [SerializeField] Animator uiAnimator;
-
 
     private void Start()
     {
@@ -81,11 +77,6 @@ public class PlayerUI : MonoBehaviour
     public void CloseSettingsMenu()
     {
         settingsMenu.SetActive(false);
-    }
-
-    public void FadeScreen()
-    {
-        uiAnimator.SetTrigger("FadeOut");
     }
 
     public void QuitGame()
