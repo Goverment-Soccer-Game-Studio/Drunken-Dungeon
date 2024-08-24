@@ -241,6 +241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9e05458bbb6824e9b18ab684c103b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &625868653 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5733634108718902077, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+  m_PrefabInstance: {fileID: 1672884210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &898020951 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8363477755965186140, guid: 314e2bb94ff63754da4f3921f8b590c9, type: 3}
@@ -640,6 +645,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1313894900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6844069352400876198, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+  m_PrefabInstance: {fileID: 1672884210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1361037016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998879308577161130, guid: f0202cc509638304c92f79e98b230c3f, type: 3}
@@ -807,6 +823,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+      propertyPath: uiAnimator
+      value: 
+      objectReference: {fileID: 625868653}
+    - target: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 1313894900}
     - target: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
       propertyPath: inputManager
       value: 
