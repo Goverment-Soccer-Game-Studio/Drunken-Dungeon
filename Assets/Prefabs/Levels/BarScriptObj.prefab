@@ -310,13 +310,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barCamera: {fileID: 589354479177952597}
   barAnimator: {fileID: 5618589970157741720}
-  barControls: {fileID: 0}
+  barControls: {fileID: 5631104860205357567, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
   drinks:
   - {fileID: 3058051544094207882}
   - {fileID: 8133792937890372986}
   playerCamera: {fileID: 0}
-  inputManager: {fileID: 0}
-  playerAnimator: {fileID: 0}
+  inputManager: {fileID: 3843781816896345347, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+  playerAnimator: {fileID: 487340361625065493, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
 --- !u!95 &5618589970157741720
 Animator:
   serializedVersion: 5
