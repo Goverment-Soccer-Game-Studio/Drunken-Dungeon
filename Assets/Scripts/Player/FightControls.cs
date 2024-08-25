@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FightControls : MonoBehaviour
 {
+    [SerializeField] PlayerData playerData;
     //Booleans to trigger if a punch is thrown
     bool lPunch;
     bool rPunch;
@@ -11,7 +12,6 @@ public class FightControls : MonoBehaviour
     float lPunchTimer = 0f;
     float rPunchTimer = 0f;
     //Punch Cooldown
-    [SerializeField] float punchCooldown;
 
     //Animation
     [Header("Animation")]
@@ -28,7 +28,7 @@ public class FightControls : MonoBehaviour
             //Debug.Log("Left paunch");
             animator.SetTrigger("LeftPunch");
             lAnimator.SetTrigger("PunchL");
-            lPunchTimer = punchCooldown;
+            lPunchTimer = playerData.punchCooldown;
         }
         else
         {
@@ -41,7 +41,7 @@ public class FightControls : MonoBehaviour
             //Debug.Log("Right paunch");
             animator.SetTrigger("RightPunch");
             rAnimator.SetTrigger("PunchR");
-            rPunchTimer = punchCooldown;
+            rPunchTimer = playerData.punchCooldown;
         }
         else
         {
