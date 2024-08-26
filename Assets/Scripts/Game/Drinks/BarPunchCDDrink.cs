@@ -4,20 +4,20 @@ using System.Xml.Serialization;
 using UnityEngine;
 
 //This code will be duplicated for each drink script, doing different things
-public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
+public class BarPunchCDDrink : MonoBehaviour, IInteractable, IDrink
 {
     //Input for player animator, object, and data
-    [SerializeField] private Animator barAnimator;
+    [SerializeField] private Animator playerAnimator;
     [SerializeField] GameObject playerDrinkHolder;
     [SerializeField] PlayerData playerData;
-    public string drinkName => "Power Up Drink";
-    public string interactionPrompt => "Drink " + drinkName;
+    public string drinkName => "Cooldown Cooler";
+    public string interactionPrompt => "Drink";
     //Set the inherited variables
-    public Animator iAnimator => barAnimator;
+    public Animator iAnimator => playerAnimator;
     public GameObject iDrinkHolder => playerDrinkHolder;
     public PlayerData iPlayerData => playerData;
 
-    public string drinkDescription => "Bar dmg up";
+    public string drinkDescription => "Have a loadoff at first and the agility of a tiger second.";
 
     public bool Interact(Interactor interactor)
     {
@@ -26,7 +26,8 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
         return true;
     }
 
-    public void OnDrink() {
+    public void OnDrink()
+    {
         //Set the parent to the right hard
         //this.gameObject.transform.SetParent(iDrinkHolder.transform);
         //Move the drink to the right hand
@@ -35,7 +36,7 @@ public class BarDmgUpDrink : MonoBehaviour, IInteractable, IDrink
         //iAnimator.SetTrigger("Drink");
         Debug.Log(drinkName + " has been drunk");
         //Drink effects
-        playerData.damage += 1.5f;
+        playerData.punchCooldown -= 0.1f;
         //Destroy the drink
         //Destroy(this.gameObject, 0.5f);
     }
