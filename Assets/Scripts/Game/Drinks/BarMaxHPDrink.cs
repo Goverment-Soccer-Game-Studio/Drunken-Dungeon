@@ -28,16 +28,16 @@ public class BarMaxHPDrink : MonoBehaviour, IInteractable, IDrink
 
     public void OnDrink() {
         //Set the parent to the right hard
-        //this.gameObject.transform.SetParent(iDrinkHolder.transform);
+        this.gameObject.transform.SetParent(iDrinkHolder.transform);
         //Move the drink to the right hand
-        //this.gameObject.transform.position = iDrinkHolder.transform.position;
+        this.gameObject.transform.position = iDrinkHolder.transform.position;
         //Play the animation
-        //iAnimator.SetTrigger("Drink");
+        iAnimator.SetTrigger("Drink");
         Debug.Log(drinkName + " has been drunk");
         //Drink effects
         playerData.health += healthIncrease;
         playerData.maxHealth += healthIncrease;
         //Destroy the drink
-        //Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, 0.5f);
     }
 }

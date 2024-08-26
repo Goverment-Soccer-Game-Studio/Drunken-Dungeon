@@ -12,7 +12,6 @@ public class PlayerData : ScriptableObject
     public float jumps;
     public float jumpHeight;
     public float damage;
-    public float punchCooldown;
     public enum dmgType{
         Normal,
         Fire,

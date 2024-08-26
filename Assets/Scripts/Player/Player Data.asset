@@ -12,18 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532e1948959708c47959b3f678d527cb, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 50
+  maxHealth: 0
   speed: 15
   jumps: 1
-<<<<<<< HEAD
   jumpHeight: 3
   damage: 5
-=======
-  jumpHeight: 2
-  damage: 8
-  punchCooldown: 1
-  currentDrinks: []
-  mouseSensX: 8
-  mouseSensY: 0.5
->>>>>>> daa33462a9b5bc44a4c878def6cb722d8fa3919b

@@ -11,8 +11,6 @@ public interface IEnemy
     string Name { get; set; }
     float Health { get; set; }
 
-    float dmgIframes { get; set; }
-
     //public Image hpBar { get; set; }
 
     public void OnDamage(float damage);
