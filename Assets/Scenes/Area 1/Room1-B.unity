@@ -6807,6 +6807,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomType2
       objectReference: {fileID: 0}
+    - target: {fileID: 6523752651761475849, guid: 8a838e3cad7e3214cb3546f0ebd13f20, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7196823169147319287, guid: 8a838e3cad7e3214cb3546f0ebd13f20, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
