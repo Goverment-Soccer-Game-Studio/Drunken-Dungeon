@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c4831a9d99a83534f8313c193e75f678, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dcdb0783fed2bc547af9121740e28659, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2981,15 +2981,8 @@ MonoBehaviour:
   isDisplayed: 0
   inputManager: {fileID: 0}
   pauseGameObj: {fileID: 82950223925622715}
-  settingsMenu: {fileID: 9047503467700618036}
-  vsensSlider: {fileID: 8705098172977914324}
-  hsensSlider: {fileID: 8686974055346713441}
-  vsensTxt: {fileID: 6977735944356304728}
-  hsensTxt: {fileID: 3468716527633028195}
   healthBar: {fileID: 5804110159740193436}
   healthTxt: {fileID: 5120050635404308130}
-  blackScreen: {fileID: 0}
-  uiAnimator: {fileID: 0}
 --- !u!95 &5733634108718902077
 Animator:
   serializedVersion: 5
@@ -3170,8 +3163,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 252a94cff85c2cf45b88e0fb00688123, type: 2}
-  m_sharedMaterial: {fileID: 4256207928120056957, guid: 252a94cff85c2cf45b88e0fb00688123, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4155,8 +4148,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 252a94cff85c2cf45b88e0fb00688123, type: 2}
-  m_sharedMaterial: {fileID: 4256207928120056957, guid: 252a94cff85c2cf45b88e0fb00688123, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
