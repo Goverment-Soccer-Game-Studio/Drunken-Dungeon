@@ -17,6 +17,8 @@ public class FightControls : MonoBehaviour
     [Header("Animation")]
     //Using animations to get the arms to move forwards
     [SerializeField] Animator animator;
+    [SerializeField] Animator rAnimator;
+    [SerializeField] Animator lAnimator;
 
     private void Update()
     {
@@ -25,6 +27,7 @@ public class FightControls : MonoBehaviour
         {
             Debug.Log("Left paunch");
             animator.SetTrigger("LeftPunch");
+            lAnimator.SetTrigger("PunchL");
             lPunchTimer = punchCooldown;
         }
         else
@@ -37,6 +40,7 @@ public class FightControls : MonoBehaviour
         {
             Debug.Log("Right paunch");
             animator.SetTrigger("RightPunch");
+            rAnimator.SetTrigger("PunchR");
             rPunchTimer = punchCooldown;
         }
         else
