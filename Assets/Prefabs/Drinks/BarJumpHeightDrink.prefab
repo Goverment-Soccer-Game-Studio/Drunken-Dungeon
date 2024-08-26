@@ -81,6 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89fad359d3058e48bdf9cb374d77b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 487340361625065493, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
   playerDrinkHolder: {fileID: 0}
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 0763a4bd7e7da004cbaca063ede19597, type: 2}

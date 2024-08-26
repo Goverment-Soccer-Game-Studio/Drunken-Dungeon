@@ -13,6 +13,7 @@ public class SkeletonEnemy : MonoBehaviour, IEnemy
     [SerializeField] public string Name { get; set; } = "Skeleton";
     [SerializeField] public float Health { get; set; }  = 10f;
     public GameObject Player { get; set; }
+    public float dmgIframes { get; set; }
 
     //public Image hpBar { get; set; }
 
@@ -56,6 +57,7 @@ public class SkeletonEnemy : MonoBehaviour, IEnemy
         animator = GetComponent<Animator>();
 
         Player = GameObject.Find("Player");
+        dmgIframes = 0.5f;
     }
 
     // Update is called once per frame
