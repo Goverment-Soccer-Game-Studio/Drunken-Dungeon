@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player Has Died!");
             SceneManager.LoadScene("RoomStart");
-            PlayerScript.playerData.health = 25;
-            PlayerScript.playerData.maxHealth = 25;
+            PlayerScript.playerData.health = 50;
+            PlayerScript.playerData.maxHealth = 50;
 
             GetPlayer();
         }
