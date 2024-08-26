@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   health: 50
-  maxHealth: 0
-  speed: 15
+  maxHealth: 50
+  speed: 17
   jumps: 1
   jumpHeight: 3
-  damage: 5
+  damage: 3
