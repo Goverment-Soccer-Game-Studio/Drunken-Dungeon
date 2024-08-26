@@ -2764,6 +2764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 436696663440271515, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 5310150821671487360}
     - target: {fileID: 3416306202424128238, guid: 25d64c27aa4c1104b9ec899e9e3ba32f, type: 3}
       propertyPath: volumeLayer.m_Bits
       value: 4294967295
@@ -10035,6 +10039,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+--- !u!114 &5310150821671487360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8193080576046220858, guid: 4c3958ec2b5546048b80874e7e5ae960, type: 3}
+  m_PrefabInstance: {fileID: 5310150821671487359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9e05458bbb6824e9b18ab684c103b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
