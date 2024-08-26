@@ -18,5 +18,11 @@ public class PlayerData : ScriptableObject
         Fire,
         Explosive
     }
+
+    public List<GameObject> currentDrinks;
+
+    //Settings stuff
+    public float mouseSensX;
+    public float mouseSensY;
 }
 
