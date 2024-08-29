@@ -50,7 +50,7 @@ One of the main challenges was implementing the drinking mechanic in a way that 
 To run Drunken Dungeon, follow these steps:
 
 ### Prerequisites
-- **Unity 2022.3.1f** (or later version) installed on your machine.
+- **Unity 2022.3.35f1** (or later version) installed on your machine.
 - A system capable of running Unity-developed games.
 
 ### Installation Steps
